@@ -4,7 +4,7 @@
       "id": "lego",
       "label": "LEGO",
       "title": "The Builders",
-      "blurb": "For the man who never stopped building.",
+      "blurb": "LEGO sets for the man who deserves a slow weekend.",
       "aside": "I've watched a grown man disappear into a thousand-piece set on a Sunday afternoon and come out calmer than any meditation app has ever made me. There's a reason these aren't toys.",
       "products": [
         { "name": "LEGO Pirates of the Caribbean — Black Pearl", "link": "https://amzn.to/4dzicfU", "image": "images/lego-black-pearl.png" },
@@ -30,7 +30,7 @@
       "id": "minecraft",
       "label": "Minecraft",
       "title": "The Pixel Years",
-      "blurb": "Soft things from the world he built when he was twelve.",
+      "blurb": "Minecraft things from the world he built when he was twelve.",
       "aside": "The men who grew up inside Minecraft don't always say it out loud. But hand them an axolotl plush and watch their face. Some childhoods don't end — they just get folded up small enough to fit on a desk.",
       "products": [
         { "name": "Zombie Riding Chicken Jockey Plush", "link": "https://amzn.to/3Pc3an6", "image": "images/mc-zombie-chicken.png" },
@@ -46,7 +46,7 @@
       "id": "good-life",
       "label": "For the Good Life",
       "title": "Quiet Upgrades",
-      "blurb": "Small objects that make ordinary days feel deliberate.",
+      "blurb": "Quiet upgrades for the parts of his day no one sees.",
       "aside": "These are the things he won't buy himself. Not because he doesn't want them — because he's the kind of guy who waits. So you don't wait. You just put one in his life and watch him reach for it every evening.",
       "products": [
         { "name": "Royal Reserve Whiskey Stones Set", "link": "https://amzn.to/43pjVhP", "image": "images/whiskey-stones.png" },
