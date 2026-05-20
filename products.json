@@ -7,24 +7,24 @@
       "blurb": "For the man who never stopped building.",
       "aside": "I've watched a grown man disappear into a thousand-piece set on a Sunday afternoon and come out calmer than any meditation app has ever made me. There's a reason these aren't toys.",
       "products": [
-        { "name": "LEGO Pirates of the Caribbean — Black Pearl", "link": "https://amzn.to/4dzicfU" },
-        { "name": "LEGO Architecture — Statue of Liberty", "link": "https://amzn.to/4deYzID" },
-        { "name": "LEGO Nintendo Game Boy", "link": "https://amzn.to/4diNTsC" },
-        { "name": "LEGO Architecture — Paris Skyline", "link": "https://amzn.to/4uxK3Ts" },
-        { "name": "LEGO Architecture — Himeji Castle", "link": "https://amzn.to/4u6FZtA" },
-        { "name": "LEGO Architecture — Taj Mahal", "link": "https://amzn.to/3R173M6" },
-        { "name": "LEGO Icons — Ford Model T", "link": "https://amzn.to/48NfwbW" },
-        { "name": "LEGO Botanical — Rose Bouquet", "link": "https://amzn.to/434cUmo" },
-        { "name": "LEGO Botanical — Japanese Maple Bonsai", "link": "https://amzn.to/4nm6A3e" },
-        { "name": "LEGO Icons — Polaroid OneStep Camera", "link": "https://amzn.to/3P9HDvi" },
-        { "name": "LEGO LED Light Kit", "link": "https://amzn.to/3PesgBy" },
-        { "name": "LEGO Botanical — Cactus", "link": "https://amzn.to/3OVi8hf" },
-        { "name": "LEGO Botanical — Peace Lily", "link": "https://amzn.to/4ux78W8" },
-        { "name": "LEGO Icons — Land Rover Defender", "link": "https://amzn.to/48OBbjV" },
-        { "name": "LEGO Icons — Porsche 911", "link": "https://amzn.to/4dm8Enb", "image": "images/porsche.png" },
-        { "name": "LEGO Architecture — Trafalgar Square", "link": "https://amzn.to/4u3aRer" },
-        { "name": "LEGO Technic — Volvo Wheel Loader", "link": "https://amzn.to/4dEXvyb" },
-        { "name": "LEGO Icons — Chevrolet Corvette", "link": "https://amzn.to/430bSb9" }
+        { "name": "LEGO Pirates of the Caribbean — Black Pearl", "link": "https://amzn.to/4dzicfU", "image": "images/lego-black-pearl.png" },
+        { "name": "LEGO Architecture — Statue of Liberty", "link": "https://amzn.to/4deYzID", "image": "images/lego-liberty.png" },
+        { "name": "LEGO Nintendo Game Boy", "link": "https://amzn.to/4diNTsC", "image": "images/lego-gameboy.png" },
+        { "name": "LEGO Architecture — Paris Skyline", "link": "https://amzn.to/4uxK3Ts", "image": "images/lego-paris.png" },
+        { "name": "LEGO Architecture — Himeji Castle", "link": "https://amzn.to/4u6FZtA", "image": "images/lego-himeji.png" },
+        { "name": "LEGO Architecture — Taj Mahal", "link": "https://amzn.to/3R173M6", "image": "images/lego-taj-mahal.png" },
+        { "name": "LEGO Icons — Ford Model T", "link": "https://amzn.to/48NfwbW", "image": "images/lego-ford-t.png" },
+        { "name": "LEGO Botanical — Rose Bouquet", "link": "https://amzn.to/434cUmo", "image": "images/lego-roses.png" },
+        { "name": "LEGO Botanical — Japanese Maple Bonsai", "link": "https://amzn.to/4nm6A3e", "image": "images/lego-bonsai.png" },
+        { "name": "LEGO Icons — Polaroid OneStep Camera", "link": "https://amzn.to/3P9HDvi", "image": "images/lego-polaroid.png" },
+        { "name": "LEGO LED Light Kit", "link": "https://amzn.to/3PesgBy", "image": "images/lego-led-kit.png" },
+        { "name": "LEGO Botanical — Cactus", "link": "https://amzn.to/3OVi8hf", "image": "images/lego-cactus.png" },
+        { "name": "LEGO Botanical — Peace Lily", "link": "https://amzn.to/4ux78W8", "image": "images/lego-peace-lily.png" },
+        { "name": "LEGO Icons — Land Rover Defender", "link": "https://amzn.to/48OBbjV", "image": "images/lego-defender.png" },
+        { "name": "LEGO Icons — Porsche 911", "link": "https://amzn.to/4dm8Enb", "image": "images/lego-porsche.png" },
+        { "name": "LEGO Architecture — Trafalgar Square", "link": "https://amzn.to/4u3aRer", "image": "images/lego-trafalgar.png" },
+        { "name": "LEGO Technic — Volvo Wheel Loader", "link": "https://amzn.to/4dEXvyb", "image": "images/lego-volvo.png" },
+        { "name": "LEGO Icons — Chevrolet Corvette", "link": "https://amzn.to/430bSb9", "image": "images/lego-corvette.png" }
       ]
     },
     {
@@ -34,13 +34,13 @@
       "blurb": "Soft things from the world he built when he was twelve.",
       "aside": "The men who grew up inside Minecraft don't always say it out loud. But hand them an axolotl plush and watch their face. Some childhoods don't end — they just get folded up small enough to fit on a desk.",
       "products": [
-        { "name": "Zombie Riding Chicken Jockey Plush", "link": "https://amzn.to/3Pc3an6" },
-        { "name": "Wolf Companion Plush", "link": "https://amzn.to/4ts6SGY" },
-        { "name": "8-Piece Mob Plush Collection", "link": "https://amzn.to/4uEZQjf" },
-        { "name": "Bee Plush", "link": "https://amzn.to/4dk71Gy" },
-        { "name": "Wolf LED Mood Lamp", "link": "https://amzn.to/4u57CD8" },
-        { "name": "Fox LED Mood Lamp", "link": "https://amzn.to/4derMU1" },
-        { "name": "Axolotl Plush", "link": "https://amzn.to/4dk8Bbo" }
+        { "name": "Zombie Riding Chicken Jockey Plush", "link": "https://amzn.to/3Pc3an6", "image": "images/mc-zombie-chicken.png" },
+        { "name": "Wolf Companion Plush", "link": "https://amzn.to/4ts6SGY", "image": "images/mc-wolf-plush.png" },
+        { "name": "8-Piece Mob Plush Collection", "link": "https://amzn.to/4uEZQjf", "image": "images/mc-mob-set.png" },
+        { "name": "Bee Plush", "link": "https://amzn.to/4dk71Gy", "image": "images/mc-bee.png" },
+        { "name": "Wolf LED Mood Lamp", "link": "https://amzn.to/4u57CD8", "image": "images/mc-wolf-lamp.png" },
+        { "name": "Fox LED Mood Lamp", "link": "https://amzn.to/4derMU1", "image": "images/mc-fox-lamp.png" },
+        { "name": "Axolotl Plush", "link": "https://amzn.to/4dk8Bbo", "image": "images/mc-axolotl.png" }
       ]
     },
     {
@@ -50,9 +50,9 @@
       "blurb": "Small objects that make ordinary days feel deliberate.",
       "aside": "These are the things he won't buy himself. Not because he doesn't want them — because he's the kind of guy who waits. So you don't wait. You just put one in his life and watch him reach for it every evening.",
       "products": [
-        { "name": "Royal Reserve Whiskey Stones Set", "link": "#" },
-        { "name": "Hydro Flask 32oz — Wide Mouth", "link": "#" },
-        { "name": "Mini Bag Sealer", "link": "#" }
+        { "name": "Royal Reserve Whiskey Stones Set", "link": "#", "image": "images/whiskey-stones.png" },
+        { "name": "Hydro Flask 32oz — Wide Mouth", "link": "#", "image": "images/hydro-flask.png" },
+        { "name": "Mini Bag Sealer", "link": "#", "image": "images/bag-sealer.png" }
       ]
     }
   ]
