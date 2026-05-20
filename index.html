@@ -16,7 +16,6 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- Single typeface family: Fraunces — uses variable weight for hierarchy -->
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,300;1,9..144,400;1,9..144,500&display=swap" rel="stylesheet">
 
 <style>
@@ -106,24 +105,6 @@ nav {
   position: relative;
 }
 
-.issue-line {
-  font-size: 0.78rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--accent);
-  font-weight: 600;
-  margin-bottom: 40px;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  opacity: 0;
-  animation: rise 0.9s ease forwards 0.1s;
-}
-.issue-line::before {
-  content: ''; width: 32px; height: 1px;
-  background: var(--accent); opacity: 0.5;
-}
-
 .hero-headline {
   font-size: clamp(4rem, 12vw, 10rem);
   font-weight: 400;
@@ -151,6 +132,7 @@ nav {
   opacity: 0;
   animation: rise 1s ease forwards 0.5s;
 }
+
 .hero-trust {
   margin-top: 64px;
   display: flex;
@@ -182,6 +164,14 @@ nav {
   text-transform: uppercase;
   color: var(--ink-mute);
   font-weight: 500;
+}
+.trust-headline {
+  font-size: 2rem;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1;
+  color: var(--accent);
+  letter-spacing: -0.02em;
 }
 
 /* ═══════════════ MANIFESTO ═══════════════ */
@@ -230,43 +220,6 @@ nav {
   margin: 0 auto;
 }
 
-.section-head {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  margin-bottom: 80px;
-  padding-bottom: 32px;
-  border-bottom: 1px solid var(--rule);
-}
-
-.section-head-left {
-  display: flex;
-  align-items: baseline;
-  gap: 22px;
-}
-
-.section-number {
-  font-size: 1rem;
-  font-style: italic;
-  color: var(--accent);
-  font-weight: 500;
-}
-
-.section-title {
-  font-size: clamp(2.2rem, 4vw, 3.4rem);
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  line-height: 1;
-}
-
-.section-meta {
-  font-size: 0.72rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--ink-mute);
-  font-weight: 500;
-}
-
 .collections-list { display: flex; flex-direction: column; }
 
 .collection-row {
@@ -280,6 +233,7 @@ nav {
   position: relative;
   transition: padding 0.45s ease;
 }
+.collection-row:first-child { border-top: 1px solid var(--rule); }
 
 .collection-row:hover { padding-left: 24px; }
 .collection-row:hover .col-arrow { transform: translateX(10px); }
@@ -381,6 +335,18 @@ nav {
   margin-bottom: 8px;
 }
 .col-right-foot strong { font-weight: 600; letter-spacing: 0.15em; }
+
+.col-right-foot a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(245,241,232,0.4);
+  padding-bottom: 2px;
+  transition: border-color 0.3s, color 0.3s;
+}
+.col-right-foot a:hover {
+  color: #fff;
+  border-color: #fff;
+}
 
 .colophon-rule {
   max-width: 1200px;
@@ -536,13 +502,6 @@ nav {
 }
 .product-row:hover .prod-cta svg { transform: translate(4px, -4px); }
 
-.prod-num {
-  font-size: 1.05rem;
-  font-style: italic;
-  color: var(--ink-mute);
-  font-weight: 400;
-}
-
 .prod-image-wrap {
   width: 140px;
   height: 140px;
@@ -669,15 +628,13 @@ nav {
   .nav-mark { font-size: 1.2rem; }
 
   #hero { padding: 130px 22px 80px; }
-  .hero-cta { padding: 18px 28px; font-size: 0.78rem; }
   .hero-trust { gap: 32px; margin-top: 48px; }
   .trust-num { font-size: 1.9rem; }
+  .trust-headline { font-size: 1.5rem; }
 
   #manifesto { padding: 90px 22px 90px; }
 
   #collections { padding: 40px 22px 110px; }
-  .section-head { margin-bottom: 48px; padding-bottom: 22px; flex-direction: column; align-items: flex-start; gap: 12px; }
-  .section-head-left { gap: 14px; }
 
   .collection-row {
     grid-template-columns: 1fr;
@@ -754,11 +711,10 @@ let CATEGORIES = [];
       </div>
       <div class="trust-item">
         <div class="trust-num" id="trust-products">—</div>
-        <div class="trust-label">Hand-Picked Items</div>
+        <div class="trust-label">Hand-Picked</div>
       </div>
       <div class="trust-item">
-        <div class="trust-num"><i>1</i></div>
-        <div class="trust-label">Guy, Choosing</div>
+        <div class="trust-headline">For Him,<br>Only.</div>
       </div>
     </div>
   </section>
@@ -781,7 +737,7 @@ let CATEGORIES = [];
       </div>
       <div class="col-right-foot">
         <div><span>Curated by</span><strong>Andy</strong></div>
-        <div><span>Contact</span><strong>Find me on Pinterest</strong></div>
+        <div><span>Contact</span><strong><a href="https://www.pinterest.com/TheAndyGifts/" target="_blank" rel="noopener">Find me on Pinterest</a></strong></div>
       </div>
     </div>
     <div class="colophon-rule">
@@ -829,7 +785,7 @@ let CATEGORIES = [];
 // ═══════════════ LOAD DATA FROM JSON ═══════════════
 async function loadData() {
   try {
-    const res = await fetch('products.json?v=' + Date.now()); // cache-bust
+    const res = await fetch('products.json?v=' + Date.now());
     if (!res.ok) throw new Error('Failed to load products.json');
     const data = await res.json();
     CATEGORIES = data.categories || [];
@@ -889,7 +845,6 @@ function showCategory(id) {
   const cat = CATEGORIES.find(c => c.id === id);
   if (!cat) return;
 
-  // GA event
   if (typeof gtag === 'function') {
     gtag('event', 'view_collection', {
       collection_name: cat.label,
@@ -929,14 +884,13 @@ function showCategory(id) {
     </a>`;
   }).join('');
 
-  // other collections
   const others = CATEGORIES.filter(c => c.id !== id);
   document.getElementById('other-cols').innerHTML = others.map(c => `
     <a class="keep-going-link" onclick="showCategory('${c.id}')">${escapeHtml(c.title)}</a>
   `).join('');
 
   window.scrollTo({ top: 0, behavior: 'smooth' });
-  try { history.pushState({}, '', `?c=${id}`); } catch(e) { /* preview env may block */ }
+  try { history.pushState({}, '', `?c=${id}`); } catch(e) {}
 }
 
 // ═══════════════ SHOW HOME ═══════════════
