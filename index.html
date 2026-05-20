@@ -159,8 +159,7 @@ nav {
   padding: 22px 40px;
   background: var(--ink);
   color: var(--cream);
-  text-decoration: none;
-  font-size: 1rem;
+  font-size: 0.85rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   font-weight: 600;
@@ -541,10 +540,12 @@ nav {
 
 .product-row {
   display: grid;
-  grid-template-columns: 80px 1fr auto;
+.product-row {
+  display: grid;
+  grid-template-columns: 60px 120px 1fr auto;
   align-items: center;
-  gap: 40px;
-  padding: 36px 0;
+  gap: 32px;
+  padding: 28px 0;
   border-bottom: 1px solid var(--rule);
   transition: padding 0.4s ease;
   text-decoration: none;
@@ -559,6 +560,7 @@ nav {
   padding-left: 20px;
 }
 .product-row:hover .prod-name { color: var(--accent); }
+.product-row:hover .prod-image { transform: scale(1.04); }
 .product-row:hover .prod-cta {
   color: var(--cream);
   background: var(--ink);
@@ -571,6 +573,39 @@ nav {
   font-style: italic;
   color: var(--ink-mute);
   font-weight: 400;
+}
+
+.prod-image-wrap {
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+  background: var(--cream-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--rule);
+}
+.prod-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  display: block;
+}
+.prod-image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-style: italic;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  font-weight: 500;
+  text-align: center;
+  padding: 0 8px;
 }
 
 .prod-name {
@@ -701,18 +736,19 @@ nav {
   .page-aside { border-left: none; border-top: 1px solid var(--rule); padding: 28px 0 0; }
 
   .product-row {
-    grid-template-columns: 44px 1fr;
-    gap: 18px;
-    padding: 28px 0;
+    grid-template-columns: 36px 80px 1fr;
+    gap: 14px;
+    padding: 22px 0;
   }
   .product-row:hover { padding-left: 0; }
+  .prod-image-wrap { width: 80px; height: 80px; }
   .prod-cta {
     grid-column: 1 / -1;
     justify-self: start;
     margin-top: 8px;
     padding: 12px 20px;
   }
-  .prod-name { font-size: 1.25rem; }
+  .prod-name { font-size: 1.1rem; }
 
   .keep-going { margin-top: 80px; }
   .keep-going-links { gap: 24px; }
@@ -915,7 +951,11 @@ function showCategory(id) {
   document.getElementById('page-aside').textContent = cat.aside;
 
   const list = document.getElementById('products-list');
-  list.innerHTML = cat.products.map((p, i) => `
+  list.innerHTML = cat.products.map((p, i) => {
+    const imageHtml = p.image
+      ? `<img class="prod-image" src="${escapeAttr(p.image)}" alt="${escapeAttr(p.name)}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\\'prod-image-placeholder\\'>No image</div>'">`
+      : `<div class="prod-image-placeholder">No image</div>`;
+    return `
     <a class="product-row fade-in"
        href="${escapeAttr(p.link)}"
        target="_blank"
@@ -923,6 +963,7 @@ function showCategory(id) {
        onclick="trackAffiliateClick('${escapeAttr(cat.label)}', '${escapeAttr(p.name)}')"
        style="animation-delay:${i * 0.04}s">
       <div class="prod-num">${String(i + 1).padStart(2, '0')}</div>
+      <div class="prod-image-wrap">${imageHtml}</div>
       <div class="prod-name">${escapeHtml(p.name)}</div>
       <span class="prod-cta">
         View
@@ -930,8 +971,8 @@ function showCategory(id) {
           <path d="M2 9L9 2M9 2H3M9 2V8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
         </svg>
       </span>
-    </a>
-  `).join('');
+    </a>`;
+  }).join('');
 
   // other collections
   const others = CATEGORIES.filter(c => c.id !== id);
