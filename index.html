@@ -540,14 +540,12 @@ nav {
 
 .product-row {
   display: grid;
-.product-row {
-  display: grid;
-  grid-template-columns: 60px 120px 1fr auto;
+  grid-template-columns: 140px 1fr auto;
   align-items: center;
-  gap: 32px;
+  gap: 36px;
   padding: 28px 0;
   border-bottom: 1px solid var(--rule);
-  transition: padding 0.4s ease;
+  transition: padding 0.4s ease, background 0.4s ease;
   text-decoration: none;
   color: inherit;
   cursor: pointer;
@@ -576,8 +574,8 @@ nav {
 }
 
 .prod-image-wrap {
-  width: 120px;
-  height: 120px;
+  width: 140px;
+  height: 140px;
   overflow: hidden;
   background: var(--cream-2);
   display: flex;
@@ -736,19 +734,20 @@ nav {
   .page-aside { border-left: none; border-top: 1px solid var(--rule); padding: 28px 0 0; }
 
   .product-row {
-    grid-template-columns: 36px 80px 1fr;
-    gap: 14px;
+    grid-template-columns: 90px 1fr;
+    gap: 16px;
     padding: 22px 0;
   }
   .product-row:hover { padding-left: 0; }
-  .prod-image-wrap { width: 80px; height: 80px; }
-  .prod-cta {
-    grid-column: 1 / -1;
-    justify-self: start;
-    margin-top: 8px;
-    padding: 12px 20px;
-  }
+  .prod-image-wrap { width: 90px; height: 90px; }
   .prod-name { font-size: 1.1rem; }
+  .prod-cta {
+    grid-column: 2 / -1;
+    justify-self: start;
+    margin-top: 6px;
+    padding: 10px 18px;
+    font-size: 0.65rem;
+  }
 
   .keep-going { margin-top: 80px; }
   .keep-going-links { gap: 24px; }
@@ -962,7 +961,6 @@ function showCategory(id) {
        rel="noopener"
        onclick="trackAffiliateClick('${escapeAttr(cat.label)}', '${escapeAttr(p.name)}')"
        style="animation-delay:${i * 0.04}s">
-      <div class="prod-num">${String(i + 1).padStart(2, '0')}</div>
       <div class="prod-image-wrap">${imageHtml}</div>
       <div class="prod-name">${escapeHtml(p.name)}</div>
       <span class="prod-cta">
