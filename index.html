@@ -4,6 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Andy Gifts — Curated gifts, chosen by a guy.</title>
+
+<!-- ────────── Google Analytics ────────── -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2M3K8BT7SS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2M3K8BT7SS');
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -809,6 +819,14 @@ function showCategory(id) {
   const cat = CATEGORIES.find(c => c.id === id);
   if (!cat) return;
 
+  // GA: track category view
+  if (typeof gtag === 'function') {
+    gtag('event', 'view_collection', {
+      collection_name: cat.label,
+      collection_title: cat.title
+    });
+  }
+
   document.getElementById('home-page').style.display = 'none';
   const page = document.getElementById('product-page');
   page.style.display = 'block';
@@ -821,7 +839,9 @@ function showCategory(id) {
 
   const list = document.getElementById('products-list');
   list.innerHTML = cat.products.map((p, i) => `
-    <a class="product-row fade-in" href="${p.link}" target="_blank" rel="noopener" style="animation-delay:${i * 0.04}s">
+    <a class="product-row fade-in" href="${p.link}" target="_blank" rel="noopener"
+       onclick="trackAffiliateClick('${cat.label}', ${JSON.stringify(p.name).replace(/"/g, '&quot;')})"
+       style="animation-delay:${i * 0.04}s">
       <div class="prod-num">${String(i + 1).padStart(2, '0')}</div>
       <div class="prod-name">${p.name}</div>
       <span class="prod-cta">
@@ -854,6 +874,18 @@ function showHome() {
   document.getElementById('home-page').style.display = 'block';
   window.scrollTo({ top: 0, behavior: 'smooth' });
   history.pushState({}, '', window.location.pathname);
+}
+
+// ───── GA: AFFILIATE CLICK TRACKING ─────
+function trackAffiliateClick(category, productName) {
+  if (typeof gtag === 'function') {
+    gtag('event', 'affiliate_click', {
+      product_name: productName,
+      collection: category,
+      event_category: 'Affiliate',
+      event_label: productName
+    });
+  }
 }
 
 // ───── INIT ─────
