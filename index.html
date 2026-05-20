@@ -846,7 +846,6 @@ function initApp() {
   document.getElementById('trust-collections').innerHTML = `<i>${String(CATEGORIES.length).padStart(2, '0')}</i>`;
   const total = CATEGORIES.reduce((sum, c) => sum + c.products.length, 0);
   document.getElementById('trust-products').innerHTML = `<i>${total}</i>`;
-  document.getElementById('collections-count').textContent = `${CATEGORIES.length} sections`;
 
   renderHome();
 
