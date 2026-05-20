@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Andy Gifts — Curated gifts, chosen by a guy.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --cream:     #f5f1e8;
+  --cream-2:   #ede7d8;
+  --paper:     #faf7ef;
+  --ink:       #1a1814;
+  --ink-soft:  #4a4640;
+  --ink-mute:  #8a8378;
+  --rule:      #d6cfbf;
+  --accent:    #8b3a1f;   /* terracotta — used sparingly */
+
+  --serif:     'Fraunces', 'Cormorant Garamond', Georgia, serif;
+  --sans:      'Inter', -apple-system, system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-weight: 300;
+  line-height: 1.55;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* paper grain */
+body::before {
+  content:'';
+  position: fixed; inset:0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.09 0 0 0 0 0.08 0 0 0 0.5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.45;
+  mix-blend-mode: multiply;
+}
+
+/* ─────────── NAV ─────────── */
+nav {
+  position: fixed; top:0; left:0; right:0;
+  height: 68px;
+  z-index: 100;
+  background: rgba(245,241,232,0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 44px;
+}
+
+.nav-mark {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  color: var(--ink);
+}
+.nav-mark i { font-style: italic; font-weight: 300; }
+
+.nav-meta {
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  font-weight: 400;
+}
+
+/* ─────────── HOME ─────────── */
+#home-page { position: relative; z-index: 2; }
+
+#hero {
+  min-height: 100vh;
+  padding: 140px 44px 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 60px;
+  position: relative;
+}
+
+.issue-line {
+  font-size: 0.7rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  opacity: 0;
+  animation: rise 0.9s ease forwards 0.1s;
+}
+.issue-line::before, .issue-line::after {
+  content:''; flex: 1; max-width: 60px;
+  height: 1px; background: var(--accent); opacity: 0.4;
+}
+
+.hero-headline {
+  font-family: var(--serif);
+  font-size: clamp(3.5rem, 9vw, 8rem);
+  font-weight: 300;
+  line-height: 0.98;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  opacity: 0;
+  animation: rise 1s ease forwards 0.3s;
+}
+.hero-headline i {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--accent);
+}
+
+.hero-deck {
+  font-family: var(--serif);
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.45;
+  color: var(--ink-soft);
+  max-width: 540px;
+  opacity: 0;
+  animation: rise 1s ease forwards 0.5s;
+}
+
+.hero-byline {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 12px;
+  opacity: 0;
+  animation: rise 1s ease forwards 0.7s;
+}
+.byline-rule {
+  width: 28px; height: 1px;
+  background: var(--ink-mute);
+}
+.byline-text {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+.byline-text strong { color: var(--ink); font-weight: 500; }
+
+.hero-divider {
+  position: absolute;
+  bottom: 60px;
+  left: 44px;
+  right: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  opacity: 0;
+  animation: rise 1s ease forwards 1s;
+}
+.hero-divider .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--accent); }
+
+/* ─────────── MANIFESTO ─────────── */
+#manifesto {
+  padding: 100px 44px 80px;
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+  border-top: 1px solid var(--rule);
+}
+
+.manifesto-eyebrow {
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 32px;
+  font-weight: 500;
+}
+
+.manifesto-quote {
+  font-family: var(--serif);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 300;
+  line-height: 1.45;
+  font-style: italic;
+  color: var(--ink);
+  letter-spacing: -0.005em;
+}
+.manifesto-quote::before, .manifesto-quote::after {
+  content: '"'; color: var(--accent);
+  font-family: var(--serif);
+}
+
+.manifesto-author {
+  margin-top: 36px;
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+.manifesto-author strong { color: var(--ink); font-weight: 500; }
+
+/* ─────────── COLLECTIONS ─────────── */
+#collections {
+  padding: 80px 44px 140px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 64px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.section-head-left {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.section-number {
+  font-family: var(--serif);
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--accent);
+}
+
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.section-meta {
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+
+.collections-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.collection-row {
+  display: grid;
+  grid-template-columns: 80px 1fr auto;
+  gap: 40px;
+  align-items: center;
+  padding: 44px 0;
+  border-bottom: 1px solid var(--rule);
+  cursor: pointer;
+  position: relative;
+  transition: padding 0.4s ease;
+}
+
+.collection-row:hover { padding-left: 16px; }
+.collection-row:hover .col-arrow { transform: translateX(8px); }
+.collection-row:hover .col-title { color: var(--accent); }
+
+.col-index {
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--ink-mute);
+  letter-spacing: 0.04em;
+}
+
+.col-content { display: flex; flex-direction: column; gap: 6px; }
+
+.col-title {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  transition: color 0.35s;
+}
+
+.col-blurb {
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--ink-soft);
+  max-width: 480px;
+  line-height: 1.5;
+  margin-top: 8px;
+}
+
+.col-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 14px;
+}
+
+.col-count {
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+
+.col-arrow {
+  font-family: var(--serif);
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: var(--ink);
+  transition: transform 0.35s, color 0.35s;
+}
+.collection-row:hover .col-arrow { color: var(--accent); }
+
+/* ─────────── EDITORIAL FOOTER ─────────── */
+#colophon {
+  background: var(--ink);
+  color: var(--cream);
+  padding: 80px 44px 56px;
+  position: relative;
+  z-index: 2;
+}
+.colophon-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+.col-left h3 {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: 2rem;
+  font-style: italic;
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+.col-left p {
+  font-size: 0.92rem;
+  color: rgba(245,241,232,0.7);
+  max-width: 380px;
+  line-height: 1.7;
+}
+.col-right-foot {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.col-right-foot span {
+  color: rgba(245,241,232,0.5);
+  display: block;
+  margin-bottom: 6px;
+}
+.col-right-foot strong { font-weight: 500; }
+
+.colophon-rule {
+  max-width: 1100px;
+  margin: 56px auto 0;
+  border-top: 1px solid rgba(245,241,232,0.15);
+  padding-top: 28px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(245,241,232,0.45);
+}
+
+/* ════════════ PRODUCT PAGE ════════════ */
+#product-page {
+  display: none;
+  min-height: 100vh;
+  position: relative;
+  z-index: 2;
+}
+
+.page-inner {
+  padding: 130px 44px 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.back-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 56px;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--sans);
+  transition: color 0.3s;
+  padding: 0;
+}
+.back-btn:hover { color: var(--accent); }
+.back-btn svg { transition: transform 0.3s; }
+.back-btn:hover svg { transform: translateX(-5px); }
+
+.section-tag {
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+
+.page-intro {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 80px;
+  margin-bottom: 96px;
+  align-items: end;
+}
+
+.page-chapter {
+  font-family: var(--serif);
+  font-size: 0.78rem;
+  font-style: italic;
+  color: var(--accent);
+  margin-bottom: 18px;
+  letter-spacing: 0.04em;
+}
+
+.page-title {
+  font-family: var(--serif);
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 300;
+  line-height: 0.98;
+  letter-spacing: -0.025em;
+  margin-bottom: 28px;
+}
+.page-title i { font-style: italic; color: var(--accent); }
+
+.page-dek {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  max-width: 460px;
+}
+
+.page-aside {
+  border-left: 1px solid var(--rule);
+  padding: 4px 0 4px 28px;
+}
+.page-aside-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 14px;
+  font-weight: 500;
+}
+.page-aside-text {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+
+/* ─────── product grid (editorial list) ─────── */
+.products-list {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.product-row {
+  display: grid;
+  grid-template-columns: 60px 1fr auto;
+  align-items: center;
+  gap: 32px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--rule);
+  transition: padding 0.4s ease;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  position: relative;
+}
+
+.product-row:first-child { border-top: 1px solid var(--rule); }
+
+.product-row:hover {
+  padding-left: 12px;
+}
+.product-row:hover .prod-name {
+  color: var(--accent);
+}
+.product-row:hover .prod-cta {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.product-row:hover .prod-cta svg {
+  transform: translate(3px, -3px);
+}
+
+.prod-num {
+  font-family: var(--serif);
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--ink-mute);
+}
+
+.prod-name {
+  font-family: var(--serif);
+  font-size: clamp(1.2rem, 2vw, 1.65rem);
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: -0.005em;
+  transition: color 0.35s;
+}
+
+.prod-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.66rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  padding: 10px 16px;
+  border: 1px solid var(--rule);
+  border-radius: 1px;
+  transition: color 0.3s, border-color 0.3s;
+  white-space: nowrap;
+}
+.prod-cta svg { transition: transform 0.3s; }
+
+/* ════════════ ANIMATIONS ════════════ */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: rise 0.8s ease forwards;
+}
+
+/* ════════════ MOBILE ════════════ */
+@media (max-width: 720px) {
+  nav { padding: 0 22px; height: 60px; }
+  .nav-meta { display: none; }
+  #hero { padding: 110px 22px 60px; }
+  .hero-divider { left: 22px; right: 22px; bottom: 32px; flex-wrap: wrap; gap: 8px; font-size: 0.58rem; }
+  .hero-divider .dot { display: none; }
+  #manifesto { padding: 70px 22px 60px; }
+  #collections { padding: 60px 22px 100px; }
+  .section-head { margin-bottom: 32px; padding-bottom: 16px; flex-direction: column; align-items: flex-start; gap: 8px; }
+  .collection-row {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 32px 0;
+  }
+  .collection-row:hover { padding-left: 0; }
+  .col-index { font-size: 0.78rem; }
+  .col-blurb { font-size: 0.92rem; }
+  .col-right { flex-direction: row; align-items: center; justify-content: space-between; width: 100%; margin-top: 4px; }
+
+  #colophon { padding: 60px 22px 40px; }
+  .colophon-inner { grid-template-columns: 1fr; gap: 36px; }
+  .colophon-rule { flex-direction: column; gap: 10px; }
+
+  .page-inner { padding: 100px 22px 60px; }
+  .page-intro { grid-template-columns: 1fr; gap: 40px; margin-bottom: 56px; }
+  .page-aside { border-left: none; border-top: 1px solid var(--rule); padding: 24px 0 0; }
+  .product-row {
+    grid-template-columns: 36px 1fr;
+    gap: 14px;
+    padding: 22px 0;
+  }
+  .product-row:hover { padding-left: 0; }
+  .prod-cta {
+    grid-column: 1 / -1;
+    justify-self: start;
+    margin-top: 4px;
+  }
+  .prod-name { font-size: 1.1rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-mark" onclick="showHome()">The Andy <i>Gifts</i></div>
+  <div class="nav-meta">Issue No. 01 · 2026</div>
+</nav>
+
+<!-- ════════════════════════════════════════════════
+     EDIT BELOW TO ADD / REMOVE PRODUCTS & COLLECTIONS
+     ════════════════════════════════════════════════ -->
+<script>
+const CATEGORIES = [
+  {
+    id: "lego",
+    label: "LEGO",
+    title: "The Builders",
+    blurb: "For the man who never stopped building.",
+    aside: "I've watched a grown man disappear into a thousand-piece set on a Sunday afternoon and come out calmer than any meditation app has ever made me. There's a reason these aren't toys.",
+    products: [
+      { name: "LEGO Pirates of the Caribbean — Black Pearl",   link: "https://amzn.to/4dzicfU" },
+      { name: "LEGO Architecture — Statue of Liberty",         link: "https://amzn.to/4deYzID" },
+      { name: "LEGO Nintendo Game Boy",                        link: "https://amzn.to/4diNTsC" },
+      { name: "LEGO Architecture — Paris Skyline",             link: "https://amzn.to/4uxK3Ts" },
+      { name: "LEGO Architecture — Himeji Castle",             link: "https://amzn.to/4u6FZtA" },
+      { name: "LEGO Architecture — Taj Mahal",                 link: "https://amzn.to/3R173M6" },
+      { name: "LEGO Icons — Ford Model T",                     link: "https://amzn.to/48NfwbW" },
+      { name: "LEGO Botanical — Rose Bouquet",                 link: "https://amzn.to/434cUmo" },
+      { name: "LEGO Botanical — Japanese Maple Bonsai",        link: "https://amzn.to/4nm6A3e" },
+      { name: "LEGO Icons — Polaroid OneStep Camera",          link: "https://amzn.to/3P9HDvi" },
+      { name: "LEGO LED Light Kit",                            link: "https://amzn.to/3PesgBy" },
+      { name: "LEGO Botanical — Cactus",                       link: "https://amzn.to/3OVi8hf" },
+      { name: "LEGO Botanical — Peace Lily",                   link: "https://amzn.to/4ux78W8" },
+      { name: "LEGO Icons — Land Rover Defender",              link: "https://amzn.to/48OBbjV" },
+      { name: "LEGO Icons — Porsche 911",                      link: "https://amzn.to/4dm8Enb" },
+      { name: "LEGO Architecture — Trafalgar Square",          link: "https://amzn.to/4u3aRer" },
+      { name: "LEGO Technic — Volvo Wheel Loader",             link: "https://amzn.to/4dEXvyb" },
+      { name: "LEGO Icons — Chevrolet Corvette",               link: "https://amzn.to/430bSb9" },
+    ]
+  },
+  {
+    id: "minecraft",
+    label: "Minecraft",
+    title: "The Pixel Years",
+    blurb: "Soft things from the world he built when he was twelve.",
+    aside: "The men who grew up inside Minecraft don't always say it out loud. But hand them an axolotl plush and watch their face. Some childhoods don't end — they just get folded up small enough to fit on a desk.",
+    products: [
+      { name: "Zombie Riding Chicken Jockey Plush",            link: "https://amzn.to/3Pc3an6" },
+      { name: "Wolf Companion Plush",                          link: "https://amzn.to/4ts6SGY" },
+      { name: "8-Piece Mob Plush Collection",                  link: "https://amzn.to/4uEZQjf" },
+      { name: "Bee Plush",                                     link: "https://amzn.to/4dk71Gy" },
+      { name: "Wolf LED Mood Lamp",                            link: "https://amzn.to/4u57CD8" },
+      { name: "Fox LED Mood Lamp",                             link: "https://amzn.to/4derMU1" },
+      { name: "Axolotl Plush",                                 link: "https://amzn.to/4dk8Bbo" },
+    ]
+  },
+  {
+    id: "good-life",
+    label: "For the Good Life",
+    title: "Quiet Upgrades",
+    blurb: "Small objects that make ordinary days feel deliberate.",
+    aside: "These are the things he won't buy himself. Not because he doesn't want them — because he's the kind of guy who waits. So you don't wait. You just put one in his life and watch him reach for it every evening.",
+    products: [
+      { name: "Royal Reserve Whiskey Stones Set",              link: "#" },
+      { name: "Hydro Flask 32oz — Wide Mouth",                 link: "#" },
+      { name: "Mini Bag Sealer",                               link: "#" },
+    ]
+  },
+  // ──────────────────────────────────────────
+  // To add a new category, copy the block above
+  // and change id, label, title, blurb, aside, products.
+  // ──────────────────────────────────────────
+];
+</script>
+
+<!-- ════════════════════════════════
+              HOME PAGE
+     ════════════════════════════════ -->
+<div id="home-page">
+
+  <section id="hero">
+    <div class="issue-line">Issue 01 — A Gift Guide for the Men You Love</div>
+    <h1 class="hero-headline">Gifts he'll<br><i>actually</i> reach for.</h1>
+    <p class="hero-deck">A small archive of things men quietly want but rarely ask for. Chosen one at a time, from someone who's been on the other side of the gift table.</p>
+    <div class="hero-byline">
+      <div class="byline-rule"></div>
+      <div class="byline-text">Curated by <strong>Andy</strong> &nbsp;·&nbsp; Taipei</div>
+    </div>
+    <div class="hero-divider">
+      <span>Three Collections</span>
+      <span class="dot"></span>
+      <span>Updated Weekly</span>
+      <span class="dot"></span>
+      <span>Made for Men, Chosen by One</span>
+    </div>
+  </section>
+
+  <section id="manifesto">
+    <div class="manifesto-eyebrow">A Note from the Editor</div>
+    <p class="manifesto-quote">Most men won't ask for the thing they really want. So someone has to know him well enough to choose it for him.</p>
+    <div class="manifesto-author"><strong>Andy</strong> &nbsp;—&nbsp; Founder</div>
+  </section>
+
+  <section id="collections">
+    <div class="section-head">
+      <div class="section-head-left">
+        <span class="section-number">01 —</span>
+        <span class="section-title">The Collections</span>
+      </div>
+      <span class="section-meta">Three sections</span>
+    </div>
+    <div class="collections-list" id="collections-list"></div>
+  </section>
+
+  <footer id="colophon">
+    <div class="colophon-inner">
+      <div class="col-left">
+        <h3>For the men we<br>don't quite know<br>how to thank.</h3>
+        <p>The Andy Gifts is a quiet, ongoing list of things worth giving — chosen by one guy in Taipei who's tired of seeing his friends receive socks.</p>
+      </div>
+      <div class="col-right-foot">
+        <div><span>Curated by</span><strong>Andy · Taipei</strong></div>
+        <div><span>Affiliate</span><strong>Amazon Associates</strong></div>
+        <div><span>Contact</span><strong>theandygifts@—</strong></div>
+      </div>
+    </div>
+    <div class="colophon-rule">
+      <span>© 2026 The Andy Gifts</span>
+      <span>As an Amazon Associate, I earn from qualifying purchases.</span>
+    </div>
+  </footer>
+</div>
+
+<!-- ════════════════════════════════
+            PRODUCT PAGE
+     ════════════════════════════════ -->
+<div id="product-page">
+  <div class="page-inner">
+    <div class="back-bar">
+      <button class="back-btn" onclick="showHome()">
+        <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
+          <path d="M5 1L1 5L5 9M1 5H13" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+        Back to Collections
+      </button>
+      <span class="section-tag" id="page-tag">Collection</span>
+    </div>
+
+    <div class="page-intro">
+      <div>
+        <div class="page-chapter" id="page-chapter">— Chapter —</div>
+        <h2 class="page-title" id="page-title"></h2>
+        <p class="page-dek" id="page-dek"></p>
+      </div>
+      <aside class="page-aside">
+        <div class="page-aside-label">Editor's Note</div>
+        <p class="page-aside-text" id="page-aside"></p>
+      </aside>
+    </div>
+
+    <div class="products-list" id="products-list"></div>
+
+    <div style="margin-top:80px; padding-top:32px; border-top:1px solid var(--rule); text-align:center;">
+      <p style="font-family: var(--serif); font-style: italic; color: var(--ink-mute); font-size: 0.95rem;">
+        Continue exploring —
+      </p>
+      <div style="margin-top:18px; display:flex; gap:24px; justify-content:center; flex-wrap:wrap;" id="other-cols"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ───── RENDER HOME ─────
+function renderHome() {
+  const wrap = document.getElementById('collections-list');
+  wrap.innerHTML = CATEGORIES.map((c, i) => `
+    <div class="collection-row fade-in" onclick="showCategory('${c.id}')" style="animation-delay:${0.1 + i * 0.12}s">
+      <div class="col-index">No. 0${i + 1}</div>
+      <div class="col-content">
+        <div class="col-title">${c.title}</div>
+        <div class="col-blurb">${c.blurb}</div>
+      </div>
+      <div class="col-right">
+        <div class="col-count">${c.products.length} items</div>
+        <div class="col-arrow">→</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ───── SHOW CATEGORY ─────
+function showCategory(id) {
+  const cat = CATEGORIES.find(c => c.id === id);
+  if (!cat) return;
+
+  document.getElementById('home-page').style.display = 'none';
+  const page = document.getElementById('product-page');
+  page.style.display = 'block';
+
+  document.getElementById('page-tag').textContent = cat.label;
+  document.getElementById('page-chapter').textContent = `— ${cat.label} —`;
+  document.getElementById('page-title').innerHTML = cat.title;
+  document.getElementById('page-dek').textContent = cat.blurb;
+  document.getElementById('page-aside').textContent = cat.aside;
+
+  const list = document.getElementById('products-list');
+  list.innerHTML = cat.products.map((p, i) => `
+    <a class="product-row fade-in" href="${p.link}" target="_blank" rel="noopener" style="animation-delay:${i * 0.04}s">
+      <div class="prod-num">${String(i + 1).padStart(2, '0')}</div>
+      <div class="prod-name">${p.name}</div>
+      <span class="prod-cta">
+        View
+        <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+          <path d="M2 9L9 2M9 2H3M9 2V8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </span>
+    </a>
+  `).join('');
+
+  // other collections
+  const others = CATEGORIES.filter(c => c.id !== id);
+  document.getElementById('other-cols').innerHTML = others.map(c => `
+    <a href="javascript:void(0)" onclick="showCategory('${c.id}')"
+       style="font-family: var(--serif); font-size:1.15rem; color: var(--ink); text-decoration:none; border-bottom:1px solid var(--ink-mute); padding-bottom:2px; transition: color 0.3s, border-color 0.3s;"
+       onmouseover="this.style.color='var(--accent)'; this.style.borderColor='var(--accent)'"
+       onmouseout="this.style.color='var(--ink)'; this.style.borderColor='var(--ink-mute)'">
+      ${c.title}
+    </a>
+  `).join('');
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  history.pushState({}, '', `?c=${id}`);
+}
+
+// ───── SHOW HOME ─────
+function showHome() {
+  document.getElementById('product-page').style.display = 'none';
+  document.getElementById('home-page').style.display = 'block';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  history.pushState({}, '', window.location.pathname);
+}
+
+// ───── INIT ─────
+renderHome();
+const params = new URLSearchParams(window.location.search);
+const cat = params.get('c');
+if (cat) showCategory(cat);
+
+// back button support
+window.addEventListener('popstate', () => {
+  const p = new URLSearchParams(window.location.search);
+  const c = p.get('c');
+  if (c) showCategory(c);
+  else showHome();
+});
+</script>
+
+</body>
+</html>
