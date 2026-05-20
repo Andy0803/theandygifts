@@ -49,9 +49,8 @@
       "blurb": "Small objects that make ordinary days feel deliberate.",
       "aside": "These are the things he won't buy himself. Not because he doesn't want them — because he's the kind of guy who waits. So you don't wait. You just put one in his life and watch him reach for it every evening.",
       "products": [
-        { "name": "Royal Reserve Whiskey Stones Set", "link": "#", "image": "images/whiskey-stones.png" },
-        { "name": "Hydro Flask 32oz — Wide Mouth", "link": "#", "image": "images/hydro-flask.png" },
-        { "name": "Mini Bag Sealer", "link": "#", "image": "images/bag-sealer.png" }
+        { "name": "Royal Reserve Whiskey Stones Set", "link": "https://amzn.to/43pjVhP", "image": "images/whiskey-stones.png" },
+        { "name": "Hydro Flask 32oz — Wide Mouth", "link": "https://amzn.to/4dBCUuk", "image": "images/hydro-flask.png" },
       ]
     }
   ]
