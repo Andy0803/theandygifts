@@ -535,12 +535,30 @@ nav {
   padding: 0 8px;
 }
 
+/* ★ NEW: 產品文字區塊 (包名稱 + why) */
+.prod-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
 .prod-name {
   font-size: clamp(1.35rem, 2.3vw, 1.9rem);
   font-weight: 400;
   line-height: 1.22;
   letter-spacing: -0.012em;
   transition: color 0.35s;
+}
+
+/* ★ NEW: Why he'll like it 灰色斜體小字 */
+.prod-why {
+  font-size: 0.92rem;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--ink-mute);
+  line-height: 1.5;
+  max-width: 480px;
 }
 
 .prod-cta {
@@ -660,20 +678,23 @@ nav {
   .page-intro { grid-template-columns: 1fr; gap: 48px; margin-bottom: 72px; }
   .page-aside { border-left: none; border-top: 1px solid var(--rule); padding: 28px 0 0; }
 
+  /* ★ MOBILE 優化：圖縮小，CTA 更靠近文字 */
   .product-row {
-    grid-template-columns: 90px 1fr;
-    gap: 16px;
-    padding: 22px 0;
+    grid-template-columns: 88px 1fr;
+    gap: 14px;
+    padding: 20px 0;
+    align-items: start;
   }
   .product-row:hover { padding-left: 0; }
-  .prod-image-wrap { width: 90px; height: 90px; }
-  .prod-name { font-size: 1.1rem; }
+  .prod-image-wrap { width: 88px; height: 88px; }
+  .prod-name { font-size: 1.05rem; }
+  .prod-why { font-size: 0.82rem; }
   .prod-cta {
     grid-column: 2 / -1;
     justify-self: start;
-    margin-top: 6px;
-    padding: 10px 18px;
-    font-size: 0.65rem;
+    margin-top: 4px;
+    padding: 9px 16px;
+    font-size: 0.62rem;
   }
 
   .keep-going { margin-top: 80px; }
@@ -786,7 +807,7 @@ let CATEGORIES = [];
 // ═══════════════ LOAD DATA FROM JSON ═══════════════
 async function loadData() {
   try {
-    const res = await fetch('products.json?v=' + Date.now());
+    const res = await fetch('products.json');
     if (!res.ok) throw new Error('Failed to load products.json');
     const data = await res.json();
     CATEGORIES = data.categories || [];
@@ -867,6 +888,9 @@ function showCategory(id) {
     const imageHtml = p.image
       ? `<img class="prod-image" src="${escapeAttr(p.image)}" alt="${escapeAttr(p.name)}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\\'prod-image-placeholder\\'>No image</div>'">`
       : `<div class="prod-image-placeholder">No image</div>`;
+    const whyHtml = p.why
+      ? `<div class="prod-why">${escapeHtml(p.why)}</div>`
+      : '';
     return `
     <a class="product-row fade-in"
        href="${escapeAttr(p.link)}"
@@ -875,9 +899,12 @@ function showCategory(id) {
        onclick="trackAffiliateClick('${escapeAttr(cat.label)}', '${escapeAttr(p.name)}')"
        style="animation-delay:${i * 0.04}s">
       <div class="prod-image-wrap">${imageHtml}</div>
-      <div class="prod-name">${escapeHtml(p.name)}</div>
+      <div class="prod-text">
+        <div class="prod-name">${escapeHtml(p.name)}</div>
+        ${whyHtml}
+      </div>
       <span class="prod-cta">
-        View
+        See on Amazon
         <svg width="13" height="13" viewBox="0 0 11 11" fill="none">
           <path d="M2 9L9 2M9 2H3M9 2V8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
         </svg>
