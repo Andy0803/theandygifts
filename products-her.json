@@ -1,3 +1,25 @@
 {
-  "categories": []
+  "categories": [
+    {
+      "id": "slow-mornings",
+      "label": "Slow Mornings",
+      "title": "Slow Mornings",
+      "blurb": "For the mornings that belong only to her.",
+      "aside": "Some women don't ask for time. They quietly take it back, one slow breakfast at a time. These are the things that turn 7am into a ritual — not an obligation.",
+      "products": [
+        {
+          "name": "NutriBullet Pro 900W Blender",
+          "link": "https://amzn.to/4tWX7kz",
+          "image": "images/nutribullet-pro-900w.png",
+          "why": "She's been meaning to make smoothies for two years. This is the one that actually makes her start."
+        },
+        {
+          "name": "ROYAL CRAFT WOOD Bamboo Cutting Board Set",
+          "link": "https://amzn.to/4wO4ywV",
+          "image": "images/royal-craft-bamboo-cutting-board.png",
+          "why": "The kind of board that makes chopping strawberries feel like Sunday, not Monday."
+        }
+      ]
+    }
+  ]
 }
