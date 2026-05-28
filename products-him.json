@@ -202,14 +202,14 @@
         {
           "name": "Whiskey Decanter Globe Set",
           "link": "https://amzn.to/4nUpuOJ",
-          "image": "images/whiskey-decanter-globe-set.png",
-          "why": "He'll pour the same whiskey but it'll taste better. He won't know why. It's the glass."
+          "why": "He'll pour the same whiskey but it'll taste better. He won't know why. It's the glass.",
+          "image": "images/whiskey-decanter-globe-set.png"
         },
         {
           "name": "YETI Rambler 20oz Tumbler",
           "link": "https://amzn.to/3PKG9I8",
-          "image": "images/yeti-rambler-20oz-black.png",
-          "why": "He's been using a gas station travel mug for three years. This is the upgrade he'd never buy himself."
+          "why": "He's been using a gas station travel mug for three years. This is the upgrade he'd never buy himself.",
+          "image": "images/yeti-rambler-20oz-black.png"
         }
       ]
     }
