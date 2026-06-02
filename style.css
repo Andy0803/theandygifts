@@ -693,3 +693,92 @@ nav {
   .keep-going-links { gap: 24px; }
   .keep-going-link { font-size: 1.15rem; }
 }
+
+/* ═══════════════ GIFT GUIDES (BLOG) ═══════════════ */
+#guides {
+  padding: 40px 44px 140px;
+  max-width: 1280px;
+  margin: 0 auto;
+  border-top: 1px solid var(--rule);
+  position: relative;
+  z-index: 2;
+}
+.guides-eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 80px 0 28px;
+  font-weight: 600;
+}
+.guides-title {
+  font-family: var(--display);
+  font-size: clamp(2rem, 4.5vw, 3.4rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 56px;
+}
+.guides-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+}
+.guide-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid var(--rule);
+  padding: 40px 36px;
+  transition: padding 0.4s ease, border-color 0.4s ease, transform 0.4s ease;
+  background: var(--paper);
+}
+.guide-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+}
+.guide-card:hover .guide-card-title { color: var(--accent); }
+.guide-card:hover .guide-card-link { gap: 14px; }
+.guide-card-tag {
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.guide-card-title {
+  font-family: var(--display);
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  margin-bottom: 18px;
+  transition: color 0.35s;
+}
+.guide-card-dek {
+  font-size: 1.02rem;
+  font-style: italic;
+  color: var(--ink-soft);
+  line-height: 1.55;
+  margin-bottom: 28px;
+}
+.guide-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.74rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink);
+  font-weight: 600;
+  transition: gap 0.3s;
+}
+@media (max-width: 720px) {
+  #guides { padding: 20px 22px 110px; }
+  .guides-eyebrow { margin-top: 56px; }
+  .guides-title { margin-bottom: 40px; }
+  .guides-list { grid-template-columns: 1fr; gap: 20px; }
+  .guide-card { padding: 32px 26px; }
+}
