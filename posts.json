@@ -4,7 +4,7 @@
     "tag": "Father's Day",
     "dek": "He'll tell you not to bother. Here are nine reasons to bother anyway — things he'd never buy himself but will quietly love.",
     "url": "blog/fathers-day-gifts.html",
-    "cover": "blog/covers/fathers-day.jpg",
+    "cover": "blog/covers/fathers-day.png",
     "featured": true
   },
   {
@@ -12,7 +12,7 @@
     "tag": "Boyfriend Birthday",
     "dek": "Stop guessing. Eight things he'd love but would never buy himself.",
     "url": "blog/boyfriend-birthday-ideas.html",
-    "cover": "blog/covers/birthday.jpg",
+    "cover": "blog/covers/birthday.png",
     "featured": false
   },
   {
@@ -20,7 +20,7 @@
     "tag": "LEGO for Grown-Ups",
     "dek": "Two quiet hours, a glass of whiskey, and a thousand pieces.",
     "url": "blog/lego-gifts-for-adults.html",
-    "cover": "blog/covers/lego.jpg",
+    "cover": "blog/covers/lego.png",
     "featured": false
   }
 ]
