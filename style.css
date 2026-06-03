@@ -782,3 +782,21 @@ nav {
   .guides-list { grid-template-columns: 1fr; gap: 20px; }
   .guide-card { padding: 32px 26px; }
 }
+.browse-strip {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 48px 44px 20px;
+}
+.browse-strip a {
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+.browse-strip a:hover {
+  color: var(--accent);
+}
