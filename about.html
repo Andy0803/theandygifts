@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — The Andy Gifts</title>
+<meta name="description" content="The Andy Gifts is a curated gift guide run by Andy — an economics student and self-taught investor with an eye for things worth giving.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://andy0803.github.io/theandygifts/about.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="About — The Andy Gifts">
+<meta property="og:description" content="Who is Andy, and why should you trust his recommendations?">
+<meta property="og:url" content="https://andy0803.github.io/theandygifts/about.html">
+<meta property="og:image" content="https://andy0803.github.io/theandygifts/og-image.png">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2M3K8BT7SS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2M3K8BT7SS');
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,300;1,9..144,400;1,9..144,500&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --cream:#f5f1e8; --cream-2:#ede7d8; --paper:#faf7ef; --ink:#1a1814;
+  --ink-soft:#4a4640; --ink-mute:#8a8378; --rule:#d6cfbf; --accent:#8b3a1f;
+  --serif:'Fraunces', Georgia, 'Times New Roman', serif;
+  --display:'Libre Caslon Display', Georgia, serif;
+}
+html { scroll-behavior: smooth; }
+body { background: var(--cream); color: var(--ink); font-family: var(--serif); font-weight: 400; line-height: 1.7; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+body::before { content:''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.09 0 0 0 0 0.08 0 0 0 0 0.5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E"); pointer-events: none; z-index: 1; opacity: 0.45; mix-blend-mode: multiply; }
+body::after { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Ccircle cx='2' cy='2' r='1.2' fill='rgba(60%2C45%2C30%2C0.07)'/%3E%3C/svg%3E"); background-repeat: repeat; pointer-events: none; z-index: 1; mix-blend-mode: multiply; }
+
+nav {
+  position: fixed; top: 0; left: 0; right: 0; height: 72px; z-index: 100;
+  background: rgba(245,241,232,0.92); backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--rule);
+  display: flex; align-items: center; justify-content: space-between; padding: 0 44px;
+}
+.nav-mark { font-size: 1.4rem; font-weight: 500; letter-spacing: -0.01em; color: var(--ink); text-decoration: none; }
+.nav-mark i { font-style: italic; font-weight: 400; }
+.nav-links { display: flex; gap: 30px; }
+.nav-links a { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-mute); font-weight: 600; text-decoration: none; transition: color 0.3s; }
+.nav-links a:hover, .nav-links a.active { color: var(--accent); }
+
+.about { position: relative; z-index: 2; max-width: 760px; margin: 0 auto; padding: 150px 44px 120px; }
+.about-eyebrow { font-size: 0.72rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 28px; }
+.about h1 { font-family: var(--display); font-size: clamp(2.8rem, 7vw, 4.8rem); font-weight: 400; line-height: 1.02; letter-spacing: -0.025em; margin-bottom: 48px; }
+.about-lede { font-size: clamp(1.2rem, 2vw, 1.5rem); font-style: italic; line-height: 1.5; color: var(--ink-soft); margin-bottom: 56px; padding-bottom: 48px; border-bottom: 1px solid var(--rule); }
+.about p { font-size: 1.12rem; line-height: 1.8; margin-bottom: 28px; color: var(--ink); }
+.about h2 { font-family: var(--display); font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 400; line-height: 1.15; letter-spacing: -0.02em; margin: 64px 0 20px; }
+
+/* Trust signals */
+.trust-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 40px 0 48px; }
+.trust-card { border: 1px solid var(--rule); padding: 28px 24px; background: var(--paper); }
+.trust-card-label { font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 12px; }
+.trust-card p { font-size: 0.96rem; line-height: 1.6; color: var(--ink-soft); margin-bottom: 0; font-style: italic; }
+
+.article-divider { border: none; border-top: 1px solid var(--rule); margin: 56px 0; }
+
+.cta-row { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 48px; }
+.cta-primary { display: inline-flex; align-items: center; gap: 10px; font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cream); background: var(--ink); padding: 18px 34px; text-decoration: none; font-weight: 600; transition: background 0.3s, gap 0.3s; }
+.cta-primary:hover { background: var(--accent); gap: 14px; }
+.cta-secondary { display: inline-flex; align-items: center; gap: 10px; font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink); border: 1px solid var(--rule); padding: 18px 34px; text-decoration: none; font-weight: 600; transition: border-color 0.3s, color 0.3s; }
+.cta-secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+footer { position: relative; z-index: 2; background: var(--ink); padding: 64px 44px; text-align: center; font-size: 0.68rem; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(245,241,232,0.4); line-height: 2; }
+footer a { color: rgba(245,241,232,0.8); text-decoration: none; }
+
+@media (max-width: 720px) {
+  nav { padding: 0 22px; height: 64px; }
+  .nav-links { gap: 16px; }
+  .nav-links a { font-size: 0.62rem; }
+  .about { padding: 120px 22px 80px; }
+  .trust-grid { grid-template-columns: 1fr; }
+  .cta-row { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-mark" href="index.html">The Andy <i>Gifts</i></a>
+  <div class="nav-links">
+    <a href="index.html">Guides</a>
+    <a href="shop.html">Shop</a>
+    <a href="about.html" class="active">About</a>
+  </div>
+</nav>
+
+<div class="about">
+  <div class="about-eyebrow">About This Site</div>
+  <h1>Why trust a stranger's gift recommendations?</h1>
+
+  <p class="about-lede">Fair question. Here's the honest answer — who I am, how I pick things, and why I think that matters when you're trying to find something actually worth giving.</p>
+
+  <p>My name is Andy. I'm an economics student in Taiwan with a background in equity trading, private equity, and more hours spent reading than I'd like to admit. I started The Andy Gifts because I kept watching people receive gifts that were forgotten within a week — and I thought I could do better.</p>
+
+  <p>This site isn't backed by a brand deal or a PR agency. It's a personal project that started with a simple question: <em>what would I actually give someone I care about?</em> Everything here comes from that question.</p>
+
+  <hr class="article-divider">
+
+  <h2>How I pick what goes on this site</h2>
+
+  <p>I don't buy and test every product — I'm a student, not a lab. What I do instead is spend real time researching: reading hundreds of Amazon reviews, watching hands-on YouTube tests, cross-referencing editorial coverage from sources like Wirecutter and CNN Underscored, and looking at long-term user reports on Reddit and gear blogs.</p>
+
+  <p>The standard I hold everything to is simple: would I actually give this to someone I respect? If the answer isn't clearly yes, it doesn't go on the site.</p>
+
+  <div class="trust-grid">
+    <div class="trust-card">
+      <div class="trust-card-label">Research Standard</div>
+      <p>Every product reviewed against 100+ real user reports before it makes the list.</p>
+    </div>
+    <div class="trust-card">
+      <div class="trust-card-label">No Paid Placements</div>
+      <p>Nothing here is sponsored. Products are chosen on merit, not because someone paid for placement.</p>
+    </div>
+    <div class="trust-card">
+      <div class="trust-card-label">Affiliate Disclosure</div>
+      <p>Some links earn a small commission if you buy. It doesn't change the price you pay or what I recommend.</p>
+    </div>
+    <div class="trust-card">
+      <div class="trust-card-label">Honest Cons</div>
+      <p>Every review includes what the product doesn't do well. If there's nothing worth knowing, I say so.</p>
+    </div>
+  </div>
+
+  <hr class="article-divider">
+
+  <h2>What this site is for</h2>
+
+  <p>It's for the person standing in a shop — or staring at an Amazon search bar — who genuinely wants to get it right. Who knows the person they're buying for well enough to feel the difference between a gift that lands and one that gets quietly returned.</p>
+
+  <p>The best gifts aren't the most expensive ones. They're the ones that prove you were paying attention. That's what I'm trying to help with.</p>
+
+  <div class="cta-row">
+    <a class="cta-primary" href="index.html">Read the guides →</a>
+    <a class="cta-secondary" href="shop.html">Browse the shop →</a>
+  </div>
+</div>
+
+<footer>
+  © 2026 The Andy Gifts &nbsp;·&nbsp;
+  <a href="index.html">Home</a> &nbsp;·&nbsp;
+  <a href="shop.html">Shop</a> &nbsp;·&nbsp;
+  <a href="https://www.pinterest.com/TheAndyGifts/" target="_blank" rel="noopener">Pinterest</a><br>
+  As an Amazon Associate, I earn from qualifying purchases.
+</footer>
+
+</body>
+</html>
