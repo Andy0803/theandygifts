@@ -4,16 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="AyS90W3nTsOBfD2VskkwZ6UQNBmSIKliBJZWPrJtnTc">
-
 <title>The Andy Gifts — Honest Gift Guides for Him &amp; Her</title>
-
-<!-- ────────── SEO ────────── -->
 <meta name="description" content="Honest, research-backed gift guides for the people who deserve more than a card. Father's Day, birthdays, LEGO for adults, and more — curated by Andy.">
 <meta name="keywords" content="gift guides, gift ideas, gifts for him, gifts for her, father's day gifts, boyfriend birthday ideas, lego gifts for adults, thoughtful gifts">
 <meta name="author" content="Andy — TheAndyGifts">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://andy0803.github.io/theandygifts/">
-
 <meta property="og:type" content="website">
 <meta property="og:title" content="The Andy Gifts — Honest Gift Guides for Him & Her">
 <meta property="og:description" content="Research-backed gift guides for the people who deserve more than a card.">
@@ -65,78 +61,37 @@ body::after {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Ccircle cx='2' cy='2' r='1.2' fill='rgba(60%2C45%2C30%2C0.07)'/%3E%3C/svg%3E");
   background-repeat: repeat; pointer-events: none; z-index: 1; mix-blend-mode: multiply;
 }
-
-/* NAV */
 nav {
   position: fixed; top: 0; left: 0; right: 0; height: 72px; z-index: 100;
-  background: rgba(245, 241, 232, 0.92); backdrop-filter: blur(14px);
+  background: rgba(245,241,232,0.92); backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--rule);
   display: flex; align-items: center; justify-content: space-between; padding: 0 44px;
 }
-.nav-mark { font-size: 1.4rem; font-weight: 500; letter-spacing: -0.01em; color: var(--ink); text-decoration: none; cursor: pointer; }
+.nav-mark { font-size: 1.4rem; font-weight: 500; letter-spacing: -0.01em; color: var(--ink); text-decoration: none; }
 .nav-mark i { font-style: italic; font-weight: 400; }
 .nav-links { display: flex; gap: 30px; align-items: center; }
-.nav-links a { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-mute); font-weight: 600; text-decoration: none; transition: color 0.3s; cursor: pointer; }
-.nav-links a:hover, .nav-links a.active { color: var(--accent); }
+.nav-links a { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-mute); font-weight: 600; text-decoration: none; transition: color 0.3s; }
+.nav-links a:hover { color: var(--accent); }
 
-/* HERO (精簡) */
-#hero {
-  position: relative; z-index: 2; max-width: 1100px; margin: 0 auto;
-  padding: 150px 44px 70px; text-align: center;
-}
-.hero-eyebrow {
-  font-size: 0.72rem; letter-spacing: 0.32em; text-transform: uppercase;
-  color: var(--accent); font-weight: 600; margin-bottom: 28px;
-  opacity: 0; animation: rise 0.9s ease forwards 0.2s;
-}
-.hero-headline {
-  font-family: var(--display); font-size: clamp(2.8rem, 7vw, 5.4rem);
-  font-weight: 400; line-height: 1.0; letter-spacing: -0.03em; color: var(--ink);
-  margin-bottom: 30px; opacity: 0; animation: rise 0.9s ease forwards 0.35s;
-}
+#hero { position: relative; z-index: 2; max-width: 1100px; margin: 0 auto; padding: 150px 44px 70px; text-align: center; }
+.hero-eyebrow { font-size: 0.72rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 28px; opacity: 0; animation: rise 0.9s ease forwards 0.2s; }
+.hero-headline { font-family: var(--display); font-size: clamp(2.8rem, 7vw, 5.4rem); font-weight: 400; line-height: 1.0; letter-spacing: -0.03em; color: var(--ink); margin-bottom: 30px; opacity: 0; animation: rise 0.9s ease forwards 0.35s; }
 .hero-headline i { font-style: italic; color: var(--accent); }
-.hero-deck {
-  font-size: clamp(1.1rem, 2vw, 1.45rem); font-style: italic; line-height: 1.5;
-  color: var(--ink-soft); max-width: 600px; margin: 0 auto 0;
-  opacity: 0; animation: rise 0.9s ease forwards 0.5s;
-}
+.hero-deck { font-size: clamp(1.1rem, 2vw, 1.45rem); font-style: italic; line-height: 1.5; color: var(--ink-soft); max-width: 600px; margin: 0 auto; opacity: 0; animation: rise 0.9s ease forwards 0.5s; }
 
-/* OCCASION QUICK NAV */
-.occasions {
-  position: relative; z-index: 2; max-width: 1100px; margin: 0 auto;
-  padding: 30px 44px 20px; display: flex; gap: 14px; flex-wrap: wrap; justify-content: center;
-  opacity: 0; animation: rise 0.9s ease forwards 0.65s;
-}
-.occasion-chip {
-  font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--ink-soft); font-weight: 600; text-decoration: none;
-  padding: 11px 22px; border: 1px solid var(--rule); border-radius: 100px;
-  transition: all 0.3s; background: var(--paper);
-}
+.occasions { position: relative; z-index: 2; max-width: 1100px; margin: 0 auto; padding: 30px 44px 20px; display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; opacity: 0; animation: rise 0.9s ease forwards 0.65s; }
+.occasion-chip { font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); font-weight: 600; text-decoration: none; padding: 11px 22px; border: 1px solid var(--rule); border-radius: 100px; transition: all 0.3s; background: var(--paper); }
 .occasion-chip:hover { color: var(--cream); background: var(--ink); border-color: var(--ink); }
 
-/* FEED */
-.feed {
-  position: relative; z-index: 2; max-width: 1100px; margin: 0 auto;
-  padding: 50px 44px 60px;
-}
-.feed-label {
-  font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase;
-  color: var(--ink-mute); font-weight: 600; margin-bottom: 36px;
-  padding-bottom: 18px; border-bottom: 1px solid var(--rule);
-}
+.feed { position: relative; z-index: 2; max-width: 1100px; margin: 0 auto; padding: 50px 44px 60px; }
+.feed-label { font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--ink-mute); font-weight: 600; margin-bottom: 36px; padding-bottom: 18px; border-bottom: 1px solid var(--rule); }
 
 /* Featured */
-.post-featured {
-  display: grid; grid-template-columns: 1.1fr 1fr; gap: 0;
-  border: 1px solid var(--rule); margin-bottom: 56px;
-  text-decoration: none; color: inherit; background: var(--paper);
-  transition: border-color 0.4s ease, transform 0.4s ease; overflow: hidden;
-}
+.post-featured { display: grid; grid-template-columns: 1.1fr 1fr; gap: 0; border: 1px solid var(--rule); margin-bottom: 56px; text-decoration: none; color: inherit; background: var(--paper); transition: border-color 0.4s ease, transform 0.4s ease; overflow: hidden; }
 .post-featured:hover { border-color: var(--accent); transform: translateY(-4px); }
 .post-featured:hover .pf-title { color: var(--accent); }
-.post-featured-img { background: var(--ink); min-height: 360px; display: flex; align-items: center; justify-content: center; }
-.post-featured-img span { font-family: var(--display); color: var(--cream); font-size: 2rem; font-style: italic; opacity: 0.4; letter-spacing: 0.05em; }
+.post-featured-img { background: var(--ink); min-height: 360px; background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; }
+.img-label { font-family: var(--display); color: var(--cream); font-size: 1.8rem; font-style: italic; opacity: 0.35; letter-spacing: 0.05em; }
 .post-featured-body { padding: 56px 48px; display: flex; flex-direction: column; justify-content: center; }
 .pf-tag { font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 20px; }
 .pf-title { font-family: var(--display); font-size: clamp(1.8rem, 3vw, 2.7rem); font-weight: 400; line-height: 1.08; letter-spacing: -0.02em; margin-bottom: 20px; transition: color 0.35s; }
@@ -148,41 +103,29 @@ nav {
 .post-card { display: flex; flex-direction: column; text-decoration: none; color: inherit; border: 1px solid var(--rule); background: var(--paper); transition: border-color 0.4s ease, transform 0.4s ease; }
 .post-card:hover { border-color: var(--accent); transform: translateY(-4px); }
 .post-card:hover .pc-title { color: var(--accent); }
-.post-card-img { background: var(--ink); height: 175px; display: flex; align-items: center; justify-content: center; }
-.post-card-img span { font-family: var(--display); color: var(--cream); font-size: 1.3rem; font-style: italic; opacity: 0.4; }
+.post-card-img { background: var(--ink); height: 200px; background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.post-card-img .img-label { font-size: 1.2rem; }
 .post-card-body { padding: 32px 30px; display: flex; flex-direction: column; flex: 1; }
 .pc-tag { font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-mute); font-weight: 600; margin-bottom: 16px; }
 .pc-title { font-family: var(--display); font-size: 1.45rem; font-weight: 400; line-height: 1.15; letter-spacing: -0.015em; margin-bottom: 14px; transition: color 0.35s; }
 .pc-dek { font-size: 0.96rem; font-style: italic; color: var(--ink-soft); line-height: 1.5; margin-bottom: 22px; flex: 1; }
 .pc-link { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink); font-weight: 600; }
 
-/* SHOP STRIP */
-.shop-strip {
-  position: relative; z-index: 2; max-width: 1100px; margin: 0 auto 80px;
-  padding: 56px 48px; background: var(--ink); color: var(--cream);
-  display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap;
-}
+.shop-strip { position: relative; z-index: 2; max-width: 1100px; margin: 0 auto 80px; padding: 56px 48px; background: var(--ink); color: var(--cream); display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
 .shop-strip-text h3 { font-family: var(--display); font-size: clamp(1.6rem, 3vw, 2.3rem); font-weight: 400; line-height: 1.15; margin-bottom: 12px; }
 .shop-strip-text p { font-size: 1rem; color: rgba(245,241,232,0.7); font-style: italic; max-width: 440px; }
-.shop-strip a { font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink); background: var(--cream); padding: 18px 34px; text-decoration: none; font-weight: 600; white-space: nowrap; transition: gap 0.3s; display: inline-flex; align-items: center; gap: 10px; }
+.shop-strip a { font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink); background: var(--cream); padding: 18px 34px; text-decoration: none; font-weight: 600; white-space: nowrap; display: inline-flex; align-items: center; gap: 10px; transition: gap 0.3s; }
 .shop-strip a:hover { gap: 16px; }
 
-/* MANIFESTO */
-#manifesto {
-  position: relative; z-index: 2; padding: 20px 44px 120px; max-width: 820px;
-  margin: 0 auto; text-align: center;
-}
+#manifesto { position: relative; z-index: 2; padding: 20px 44px 120px; max-width: 820px; margin: 0 auto; text-align: center; }
 .manifesto-eyebrow { font-size: 0.72rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--accent); margin-bottom: 36px; font-weight: 600; }
 .manifesto-quote { font-size: clamp(1.6rem, 3.6vw, 2.6rem); font-weight: 400; line-height: 1.3; font-style: italic; color: var(--ink); letter-spacing: -0.015em; }
-.manifesto-quote::before { content: '"'; color: var(--accent); }
-.manifesto-quote::after { content: '"'; color: var(--accent); }
+.manifesto-quote::before { content: '\201C'; color: var(--accent); }
+.manifesto-quote::after { content: '\201D'; color: var(--accent); }
 .manifesto-author { margin-top: 40px; font-size: 0.78rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--ink-mute); font-weight: 500; }
 .manifesto-author strong { color: var(--ink); font-weight: 700; }
 
-footer {
-  position: relative; z-index: 2; background: var(--ink); padding: 80px 44px 56px;
-  text-align: center;
-}
+footer { position: relative; z-index: 2; background: var(--ink); padding: 80px 44px 56px; text-align: center; }
 .footer-mark { font-family: var(--display); font-size: 2rem; color: var(--cream); font-style: italic; margin-bottom: 28px; }
 .footer-rule { font-size: 0.68rem; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(245,241,232,0.4); line-height: 2; }
 .footer-rule a { color: rgba(245,241,232,0.8); text-decoration: none; }
@@ -197,7 +140,7 @@ footer {
   .occasions { padding: 20px 22px 10px; }
   .feed { padding: 40px 22px 50px; }
   .post-featured { grid-template-columns: 1fr; }
-  .post-featured-img { min-height: 200px; }
+  .post-featured-img { min-height: 220px; }
   .post-featured-body { padding: 36px 28px; }
   .posts-grid { grid-template-columns: 1fr; gap: 20px; }
   .shop-strip { padding: 40px 28px; margin-bottom: 56px; }
@@ -208,21 +151,19 @@ footer {
 <body>
 
 <nav>
-  <a class="nav-mark" href="index.html">The Andy <i>Gifts</i></a>
+  <a class="nav-mark" href="./">The Andy <i>Gifts</i></a>
   <div class="nav-links">
     <a href="#feed">Guides</a>
     <a href="shop.html">Shop</a>
   </div>
 </nav>
 
-<!-- HERO -->
 <section id="hero">
   <div class="hero-eyebrow">Honest Gift Guides · Curated by Andy</div>
   <h1 class="hero-headline">Gifts they'll<br><i>actually</i> love.</h1>
   <p class="hero-deck">Research-backed guides for the people who deserve more than a card. No filler, no fluff — just the things genuinely worth giving.</p>
 </section>
 
-<!-- OCCASION CHIPS -->
 <div class="occasions">
   <a class="occasion-chip" href="blog/fathers-day-gifts.html">Father's Day</a>
   <a class="occasion-chip" href="blog/boyfriend-birthday-ideas.html">Birthdays</a>
@@ -230,45 +171,12 @@ footer {
   <a class="occasion-chip" href="shop.html">Shop All</a>
 </div>
 
-<!-- FEED -->
 <main class="feed" id="feed">
   <div class="feed-label">Latest Guides</div>
-
-  <!-- Featured -->
-  <a class="post-featured" href="blog/fathers-day-gifts.html">
-    <div class="post-featured-img"><span>Father's Day</span></div>
-    <div class="post-featured-body">
-      <div class="pf-tag">Father's Day · Featured</div>
-      <h2 class="pf-title">Father's Day Gifts for the Man Who Says He Doesn't Need Anything</h2>
-      <p class="pf-dek">He'll tell you not to bother. Here are nine reasons to bother anyway — things he'd never buy himself but will quietly love.</p>
-      <span class="pf-link">Read the guide →</span>
-    </div>
-  </a>
-
-  <!-- Grid -->
-  <div class="posts-grid">
-    <a class="post-card" href="blog/boyfriend-birthday-ideas.html">
-      <div class="post-card-img"><span>Birthday</span></div>
-      <div class="post-card-body">
-        <div class="pc-tag">Boyfriend Birthday</div>
-        <h3 class="pc-title">Boyfriend Birthday Ideas: 8 Gifts He'll Actually Use</h3>
-        <p class="pc-dek">Stop guessing. Eight things he'd love but would never buy himself.</p>
-        <span class="pc-link">Read the guide →</span>
-      </div>
-    </a>
-    <a class="post-card" href="blog/lego-gifts-for-adults.html">
-      <div class="post-card-img"><span>LEGO</span></div>
-      <div class="post-card-body">
-        <div class="pc-tag">LEGO for Grown-Ups</div>
-        <h3 class="pc-title">LEGO Gifts for Adults: 8 Sets That Aren't Just for Kids</h3>
-        <p class="pc-dek">Two quiet hours, a glass of whiskey, and a thousand pieces.</p>
-        <span class="pc-link">Read the guide →</span>
-      </div>
-    </a>
-  </div>
+  <div id="featured-slot"></div>
+  <div class="posts-grid" id="grid-slot"></div>
 </main>
 
-<!-- SHOP STRIP -->
 <section class="shop-strip">
   <div class="shop-strip-text">
     <h3>Prefer to browse?</h3>
@@ -277,7 +185,6 @@ footer {
   <a href="shop.html">Browse the shop →</a>
 </section>
 
-<!-- MANIFESTO -->
 <section id="manifesto">
   <div class="manifesto-eyebrow">A Note from the Editor</div>
   <p class="manifesto-quote">The best gifts aren't asked for. They're noticed — by someone who paid attention long before the occasion.</p>
@@ -288,10 +195,71 @@ footer {
   <div class="footer-mark">The Andy <em>Gifts</em></div>
   <div class="footer-rule">
     © 2026 The Andy Gifts<br>
-    <a href="shop.html">Shop</a> &nbsp;·&nbsp; <a href="#feed">Guides</a> &nbsp;·&nbsp; <a href="https://www.pinterest.com/TheAndyGifts/" target="_blank" rel="noopener">Pinterest</a><br>
+    <a href="shop.html">Shop</a> &nbsp;·&nbsp;
+    <a href="#feed">Guides</a> &nbsp;·&nbsp;
+    <a href="https://www.pinterest.com/TheAndyGifts/" target="_blank" rel="noopener">Pinterest</a><br>
     As an Amazon Associate, I earn from qualifying purchases.
   </div>
 </footer>
+
+<script>
+// ═══════════════════════════════════════════════════
+// JSON 驅動首頁
+// 以後新增文章只需要在 posts.json 加一筆資料：
+// {
+//   "title": "文章標題",
+//   "tag": "分類標籤",
+//   "dek": "副標題一句話",
+//   "url": "blog/your-article.html",
+//   "cover": "blog/covers/your-cover.jpg",  ← 800×500px JPG
+//   "featured": false
+// }
+// featured:true 的那筆會變成大版 Featured 卡片
+// ═══════════════════════════════════════════════════
+
+function buildFeatured(p) {
+  const imgStyle = p.cover ? `style="background-image:url('${p.cover}')"` : '';
+  const imgLabel = p.cover ? '' : `<span class="img-label">${p.tag}</span>`;
+  return `
+    <a class="post-featured" href="${p.url}">
+      <div class="post-featured-img" ${imgStyle}>${imgLabel}</div>
+      <div class="post-featured-body">
+        <div class="pf-tag">${p.tag} · Featured</div>
+        <h2 class="pf-title">${p.title}</h2>
+        <p class="pf-dek">${p.dek}</p>
+        <span class="pf-link">Read the guide →</span>
+      </div>
+    </a>`;
+}
+
+function buildCard(p) {
+  const imgStyle = p.cover ? `style="background-image:url('${p.cover}')"` : '';
+  const imgLabel = p.cover ? '' : `<span class="img-label">${p.tag}</span>`;
+  return `
+    <a class="post-card" href="${p.url}">
+      <div class="post-card-img" ${imgStyle}>${imgLabel}</div>
+      <div class="post-card-body">
+        <div class="pc-tag">${p.tag}</div>
+        <h3 class="pc-title">${p.title}</h3>
+        <p class="pc-dek">${p.dek}</p>
+        <span class="pc-link">Read the guide →</span>
+      </div>
+    </a>`;
+}
+
+fetch('posts.json')
+  .then(r => r.json())
+  .then(posts => {
+    const featured = posts.find(p => p.featured);
+    const grid     = posts.filter(p => !p.featured);
+    if (featured) document.getElementById('featured-slot').innerHTML = buildFeatured(featured);
+    document.getElementById('grid-slot').innerHTML = grid.map(buildCard).join('');
+  })
+  .catch(() => {
+    document.getElementById('featured-slot').innerHTML =
+      '<p style="color:var(--ink-mute);font-style:italic;padding:20px 0">Guides loading...</p>';
+  });
+</script>
 
 </body>
 </html>

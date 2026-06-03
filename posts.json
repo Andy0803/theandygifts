@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Father's Day Gifts for the Man Who Says He Doesn't Need Anything",
+    "tag": "Father's Day",
+    "dek": "He'll tell you not to bother. Here are nine reasons to bother anyway — things he'd never buy himself but will quietly love.",
+    "url": "blog/fathers-day-gifts.html",
+    "cover": "blog/covers/fathers-day.jpg",
+    "featured": true
+  },
+  {
+    "title": "Boyfriend Birthday Ideas: 8 Gifts He'll Actually Use",
+    "tag": "Boyfriend Birthday",
+    "dek": "Stop guessing. Eight things he'd love but would never buy himself.",
+    "url": "blog/boyfriend-birthday-ideas.html",
+    "cover": "blog/covers/birthday.jpg",
+    "featured": false
+  },
+  {
+    "title": "LEGO Gifts for Adults: 8 Sets That Aren't Just for Kids",
+    "tag": "LEGO for Grown-Ups",
+    "dek": "Two quiet hours, a glass of whiskey, and a thousand pieces.",
+    "url": "blog/lego-gifts-for-adults.html",
+    "cover": "blog/covers/lego.jpg",
+    "featured": false
+  }
+]
