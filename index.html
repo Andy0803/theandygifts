@@ -180,7 +180,7 @@ footer { position: relative; z-index: 2; background: var(--ink); padding: 80px 4
 .sidebar.open { transform: translateX(0); }
 
 /* 修正 2：section 間距緊湊 */
-.sidebar-section { padding: 0 28px; }
+.sidebar-section { padding: 0 28px; border-bottom: 1px solid var(--rule); }
 
 .sidebar-parent {
   display: flex; align-items: center; justify-content: space-between;
@@ -188,7 +188,7 @@ footer { position: relative; z-index: 2; background: var(--ink); padding: 80px 4
   font-family: var(--serif); font-size: 0.72rem;
   letter-spacing: 0.22em; text-transform: uppercase;
   color: var(--ink); font-weight: 700;
-  padding: 14px 0; border-bottom: 1px solid var(--rule);
+  padding: 14px 0; border-bottom: none;
   transition: color 0.3s;
 }
 .sidebar-parent:hover { color: var(--accent); }
@@ -213,13 +213,7 @@ footer { position: relative; z-index: 2; background: var(--ink); padding: 80px 4
 .sidebar-link:hover { color: var(--accent); padding-left: 8px; }
 
 /* 修正 3：About 直接連結緊跟 Shop */
-.sidebar-direct {
-  display: block; text-decoration: none;
-  font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
-  color: var(--ink); font-weight: 700;
-  padding: 14px 28px; border-bottom: 1px solid var(--rule);
-  transition: color 0.3s;
-}
+.sidebar-direct { display: block; text-decoration: none; font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink); font-weight: 700; padding: 14px 28px; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); transition: color 0.3s; }
 .sidebar-direct:hover { color: var(--accent); }
 
 @media (max-width: 720px) {
