@@ -17,7 +17,7 @@
     { href: blogPath + 'yeti-rambler-20oz-review.html', label: 'YETI Rambler 20oz' },
     { href: blogPath + 'lego-porsche-911-review.html', label: 'LEGO Porsche 911' },
     { href: blogPath + 'victrola-highland-review.html', label: 'Victrola Highland' },
-    { href: blogPath + 'tomzio-whiskey-glass-review.html', label: 'Tomzio Whiskey Glass Set' },
+    { href: blogPath + 'tomzio-whiskey-glass-review.html', label: 'Tomzio 1986 Whiskey Glass' },
   ];
   const reviewsAll = prefix ? 'index.html' : 'blog/';
   const collections = [
