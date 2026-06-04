@@ -15,6 +15,7 @@
   const reviews = [
     { href: blogPath + 'bellroy-hide-seek-wallet-review.html', label: 'Bellroy Hide &amp; Seek Wallet' },
     { href: blogPath + 'yeti-rambler-20oz-review.html', label: 'YETI Rambler 20oz' },
+    { href: blogPath + 'lego-porsche-911-review.html', label: 'LEGO Porsche 911' },
   ];
   const reviewsAll = prefix ? 'index.html' : 'blog/';
   const collections = [
