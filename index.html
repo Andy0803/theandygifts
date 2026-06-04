@@ -171,14 +171,17 @@ footer { position: relative; z-index: 2; background: var(--ink); padding: 80px 4
   transform: translateX(-100%);
   transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
   overflow-y: auto; padding: 88px 0 48px;
+  display: flex; flex-direction: column;
 }
 .sidebar.open { transform: translateX(0); }
 
 .sidebar-section {
   width: 100%;
   display: block;
-  flex-shrink: 0;
+  margin: 0 !important;
+  padding: 0 !important;
   border-bottom: 1px solid var(--rule);
+  line-height: 0;
 }
 .sidebar-parent {
   display: flex; align-items: center; justify-content: space-between;
@@ -188,8 +191,10 @@ footer { position: relative; z-index: 2; background: var(--ink); padding: 80px 4
   letter-spacing: 0.22em; text-transform: uppercase;
   color: var(--ink); font-weight: 700;
   padding: 16px 20px;
+  margin: 0;
   transition: color 0.3s;
   text-align: left;
+  line-height: 1.4;
 }
 .sidebar-parent:hover { color: var(--accent); }
 .sidebar-parent svg { transition: transform 0.35s ease; flex-shrink: 0; }
@@ -201,13 +206,10 @@ footer { position: relative; z-index: 2; background: var(--ink); padding: 80px 4
   transition: max-height 0.4s ease;
   margin: 0;
   padding: 0;
-  line-height: 0;
-  font-size: 0;
 }
 .sidebar-children.open {
   max-height: 600px;
-  line-height: normal;
-  font-size: initial;
+  line-height: 1.4;
 }
 
 .sidebar-group-label {
@@ -419,11 +421,15 @@ blogBtn.addEventListener('click', () => {
   const isOpen = blogChildren.classList.contains('open');
   blogChildren.classList.toggle('open', !isOpen);
   blogBtn.classList.toggle('open', !isOpen);
+  shopChildren.classList.remove('open');
+  shopBtn.classList.remove('open');
 });
 shopBtn.addEventListener('click', () => {
   const isOpen = shopChildren.classList.contains('open');
   shopChildren.classList.toggle('open', !isOpen);
   shopBtn.classList.toggle('open', !isOpen);
+  blogChildren.classList.remove('open');
+  blogBtn.classList.remove('open');
 });
 </script>
 
