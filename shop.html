@@ -48,8 +48,50 @@
 
 <!-- ────────── Stylesheet ────────── -->
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="sidebar.css">
 </head>
 <body>
+
+<!-- ═══ SIDEBAR ═══ -->
+<button class="sidebar-toggle" id="sidebarToggle" aria-label="Menu">
+  <span class="bars"><span></span><span></span><span></span></span>
+</button>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-section">
+    <button class="sidebar-parent" id="reviewsToggle">
+      Reviews
+      <svg width="12" height="8" viewBox="0 0 12 8" fill="none">
+        <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+    </button>
+    <div class="sidebar-children" id="reviewsChildren">
+      <div>
+        <a class="sidebar-link" href="blog/bellroy-hide-seek-wallet-review.html">Bellroy Hide &amp; Seek Wallet</a>
+        <a class="sidebar-link" href="blog/yeti-rambler-20oz-review.html">YETI Rambler 20oz</a>
+        <a class="sidebar-link" href="blog/">All Reviews →</a>
+      </div>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <button class="sidebar-parent" id="shopToggle">
+      Shop
+      <svg width="12" height="8" viewBox="0 0 12 8" fill="none">
+        <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+    </button>
+    <div class="sidebar-children" id="shopChildren">
+      <div>
+        <a class="sidebar-link" href="shop.html#lego">The Builders</a>
+        <a class="sidebar-link" href="shop.html#minecraft">The Pixel Years</a>
+        <a class="sidebar-link" href="shop.html#good-life">Quiet Upgrades</a>
+        <a class="sidebar-link" href="shop.html#slow-mornings">Slow Mornings</a>
+      </div>
+    </div>
+  </div>
+  <a class="sidebar-direct" href="about.html">About</a>
+</nav>
+
 
 <div class="loading-screen" id="loading">Loading…</div>
 
@@ -172,5 +214,6 @@
 <!-- ────────── Main Script ────────── -->
 <script src="app.js"></script>
 
+<script src="sidebar.js"></script>
 </body>
 </html>

@@ -1,42 +1,18 @@
 [
   {
-    "title": "Father's Day Gifts for the Man Who Says He Doesn't Need Anything",
-    "tag": "Father's Day",
-    "dek": "He'll tell you not to bother. Here are nine reasons to bother anyway — things he'd never buy himself but will quietly love.",
-    "url": "blog/fathers-day-gifts.html",
-    "cover": "blog/cover/fathers-day.png",
+    "title": "Bellroy Hide & Seek Wallet Review: Is It Worth $89?",
+    "tag": "Product Review",
+    "dek": "Hundreds of owner reviews, one honest verdict — and the hidden compartment most buyers miss.",
+    "url": "blog/bellroy-hide-seek-wallet-review.html",
+    "cover": "blog/cover/bellroy-wallet.png",
     "featured": true
   },
   {
-    "title": "Boyfriend Birthday Ideas: 8 Gifts He'll Actually Use",
-    "tag": "Boyfriend Birthday",
-    "dek": "Stop guessing. Eight things he'd love but would never buy himself.",
-    "url": "blog/boyfriend-birthday-ideas.html",
-    "cover": "blog/cover/birthday.png",
+    "title": "YETI Rambler 20oz Review: Worth the Price in 2026?",
+    "tag": "Product Review",
+    "dek": "He's been reheating the same coffee every morning. We tested whether this $35 cup actually fixes that.",
+    "url": "blog/yeti-rambler-20oz-review.html",
+    "cover": "blog/cover/yeti-rambler.png",
     "featured": false
-  },
-  {
-    "title": "LEGO Gifts for Adults: 8 Sets That Aren't Just for Kids",
-    "tag": "LEGO for Grown-Ups",
-    "dek": "Two quiet hours, a glass of whiskey, and a thousand pieces.",
-    "url": "blog/lego-gifts-for-adults.html",
-    "cover": "blog/cover/lego.png",
-    "featured": false
-  },
-  {
-  "title": "Bellroy Hide & Seek Wallet Review: Is It Worth $89?",
-  "tag": "Product Review",
-  "dek": "Hundreds of reviews, one honest verdict. The wallet he'd never buy himself.",
-  "url": "blog/bellroy-hide-seek-wallet-review.html",
-  "cover": "blog/cover/bellroy-wallet.png",
-  "featured": false
-  },
-{
-  "title": "YETI Rambler 20oz Review: Worth the Price in 2026?",
-  "tag": "Product Review",
-  "dek": "He's been reheating the same coffee every morning. This ends that.",
-  "url": "blog/yeti-rambler-20oz-review.html",
-  "cover": "blog/cover/yeti-rambler.png",
-  "featured": false
-}
+  }
 ]

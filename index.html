@@ -139,111 +139,6 @@ footer { position: relative; z-index: 2; background: var(--ink); padding: 80px 4
 
 @keyframes rise { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
 
-/* ═══════════════ SIDEBAR NAV ═══════════════ */
-.sidebar-toggle {
-  position: fixed; top: 0; left: 0;
-  width: 72px; height: 72px; z-index: 200;
-  display: flex; align-items: center; justify-content: center;
-  cursor: pointer; background: none; border: none; padding: 0;
-}
-.sidebar-toggle span { display: flex; flex-direction: column; gap: 5px; }
-.sidebar-toggle span i {
-  display: block; width: 22px; height: 2px;
-  background: var(--ink); border-radius: 1px;
-  transition: all 0.35s ease; font-style: normal;
-}
-.sidebar-toggle.open span i:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.sidebar-toggle.open span i:nth-child(2) { opacity: 0; transform: scaleX(0); }
-.sidebar-toggle.open span i:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-.sidebar-overlay {
-  position: fixed; inset: 0; z-index: 149;
-  background: rgba(26,24,20,0.45);
-  opacity: 0; pointer-events: none;
-  transition: opacity 0.4s ease;
-}
-.sidebar-overlay.open { opacity: 1; pointer-events: all; }
-
-.sidebar {
-  position: fixed; top: 0; left: 0;
-  width: 280px; height: 100vh; z-index: 150;
-  background: var(--paper); border-right: 1px solid var(--rule);
-  transform: translateX(-100%);
-  transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
-  overflow-y: auto; padding: 88px 0 48px;
-  display: flex; flex-direction: column;
-}
-.sidebar.open { transform: translateX(0); }
-
-.sidebar-section {
-  width: 100%;
-  display: block;
-  margin: 0 !important;
-  padding: 0 !important;
-  border-bottom: 1px solid var(--rule);
-  line-height: 0;
-}
-.sidebar-parent {
-  display: flex; align-items: center; justify-content: space-between;
-  width: 100%;
-  background: none; border: none; cursor: pointer;
-  font-family: var(--serif); font-size: 0.72rem;
-  letter-spacing: 0.22em; text-transform: uppercase;
-  color: var(--ink); font-weight: 700;
-  padding: 16px 20px;
-  margin: 0;
-  transition: color 0.3s;
-  text-align: left;
-  line-height: 1.4;
-}
-.sidebar-parent:hover { color: var(--accent); }
-.sidebar-parent svg { transition: transform 0.35s ease; flex-shrink: 0; }
-.sidebar-parent.open svg { transform: rotate(180deg); }
-
-.sidebar-children {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 0.4s ease;
-  margin: 0;
-  padding: 0;
-}
-.sidebar-children > * {
-  overflow: hidden;
-  min-height: 0;
-}
-.sidebar-children.open {
-  grid-template-rows: 1fr;
-  line-height: 1.4;
-}
-
-.sidebar-group-label {
-  font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--accent); font-weight: 600;
-  padding: 12px 20px 6px;
-}
-.sidebar-link {
-  display: block; text-decoration: none;
-  font-size: 0.94rem; color: var(--ink-soft);
-  padding: 8px 20px; line-height: 1.4;
-  transition: color 0.3s, padding-left 0.3s;
-  font-weight: 400;
-}
-.sidebar-link:hover { color: var(--accent); padding-left: 26px; }
-
-.sidebar-direct {
-  display: block;
-  width: 100%;
-  flex-shrink: 0;
-  text-decoration: none;
-  font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
-  color: var(--ink); font-weight: 700;
-  padding: 16px 20px;
-  border-bottom: 1px solid var(--rule);
-  transition: color 0.3s;
-  text-align: left;
-}
-.sidebar-direct:hover { color: var(--accent); }
-
 @media (max-width: 720px) {
   nav { padding: 0 22px 0 84px; height: 64px; }
   .nav-links { gap: 16px; }
@@ -258,31 +153,28 @@ footer { position: relative; z-index: 2; background: var(--ink); padding: 80px 4
   #manifesto { padding: 10px 22px 80px; }
 }
 </style>
+<link rel="stylesheet" href="sidebar.css">
 </head>
 <body>
 
-<!-- 漢堡按鈕 -->
+<!-- ═══ SIDEBAR ═══ -->
 <button class="sidebar-toggle" id="sidebarToggle" aria-label="Menu">
-  <span><i></i><i></i><i></i></span>
+  <span class="bars"><span></span><span></span><span></span></span>
 </button>
-
-<!-- 遮罩 -->
 <div class="sidebar-overlay" id="sidebarOverlay"></div>
-
-<!-- 側邊目錄 -->
 <nav class="sidebar" id="sidebar">
   <div class="sidebar-section">
-    <button class="sidebar-parent" id="blogToggle">
+    <button class="sidebar-parent" id="reviewsToggle">
       Reviews
       <svg width="12" height="8" viewBox="0 0 12 8" fill="none">
         <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
       </svg>
     </button>
-    <div class="sidebar-children" id="blogChildren">
-      <div class="sidebar-children-inner">
-      <a class="sidebar-link" href="blog/bellroy-hide-seek-wallet-review.html">Bellroy Hide &amp; Seek Wallet</a>
-      <a class="sidebar-link" href="blog/yeti-rambler-20oz-review.html">YETI Rambler 20oz</a>
-      <a class="sidebar-link" href="blog/">All Reviews →</a>
+    <div class="sidebar-children" id="reviewsChildren">
+      <div>
+        <a class="sidebar-link" href="blog/bellroy-hide-seek-wallet-review.html">Bellroy Hide &amp; Seek Wallet</a>
+        <a class="sidebar-link" href="blog/yeti-rambler-20oz-review.html">YETI Rambler 20oz</a>
+        <a class="sidebar-link" href="blog/">All Reviews →</a>
       </div>
     </div>
   </div>
@@ -294,11 +186,11 @@ footer { position: relative; z-index: 2; background: var(--ink); padding: 80px 4
       </svg>
     </button>
     <div class="sidebar-children" id="shopChildren">
-      <div class="sidebar-children-inner">
-      <a class="sidebar-link" href="shop.html#lego">The Builders</a>
-      <a class="sidebar-link" href="shop.html#minecraft">The Pixel Years</a>
-      <a class="sidebar-link" href="shop.html#good-life">Quiet Upgrades</a>
-      <a class="sidebar-link" href="shop.html#slow-mornings">Slow Mornings</a>
+      <div>
+        <a class="sidebar-link" href="shop.html#lego">The Builders</a>
+        <a class="sidebar-link" href="shop.html#minecraft">The Pixel Years</a>
+        <a class="sidebar-link" href="shop.html#good-life">Quiet Upgrades</a>
+        <a class="sidebar-link" href="shop.html#slow-mornings">Slow Mornings</a>
       </div>
     </div>
   </div>
@@ -395,46 +287,7 @@ fetch('posts.json')
   });
 </script>
 
-<script>
-const toggle = document.getElementById('sidebarToggle');
-const sidebar = document.getElementById('sidebar');
-const overlay = document.getElementById('sidebarOverlay');
-const blogBtn = document.getElementById('blogToggle');
-const shopBtn = document.getElementById('shopToggle');
-const blogChildren = document.getElementById('blogChildren');
-const shopChildren = document.getElementById('shopChildren');
-
-function openSidebar() {
-  toggle.classList.add('open');
-  sidebar.classList.add('open');
-  overlay.classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closeSidebar() {
-  toggle.classList.remove('open');
-  sidebar.classList.remove('open');
-  overlay.classList.remove('open');
-  document.body.style.overflow = '';
-}
-toggle.addEventListener('click', () => {
-  sidebar.classList.contains('open') ? closeSidebar() : openSidebar();
-});
-overlay.addEventListener('click', closeSidebar);
-blogBtn.addEventListener('click', () => {
-  const isOpen = blogChildren.classList.contains('open');
-  blogChildren.classList.toggle('open', !isOpen);
-  blogBtn.classList.toggle('open', !isOpen);
-  shopChildren.classList.remove('open');
-  shopBtn.classList.remove('open');
-});
-shopBtn.addEventListener('click', () => {
-  const isOpen = shopChildren.classList.contains('open');
-  shopChildren.classList.toggle('open', !isOpen);
-  shopBtn.classList.toggle('open', !isOpen);
-  blogChildren.classList.remove('open');
-  blogBtn.classList.remove('open');
-});
-</script>
+<script src="sidebar.js"></script>
 
 </body>
 </html>
