@@ -1,4 +1,24 @@
-// Shared sidebar logic - works on all pages
+// ═══════════════ SHARED JS (sidebar + footer injection) ═══════════════
+
+// --- Auto-inject footer ---
+(function injectFooter() {
+  const slot = document.getElementById('siteFooter');
+  if (!slot) return;
+  const prefix = slot.getAttribute('data-prefix') || '';
+  slot.innerHTML = `
+    <div class="footer-mark">The Andy <em>Gifts</em></div>
+    <div class="footer-rule">
+      © ${new Date().getFullYear()} The Andy Gifts<br>
+      <a href="${prefix}shop.html">Shop</a> &nbsp;·&nbsp;
+      <a href="${prefix}blog/">Reviews</a> &nbsp;·&nbsp;
+      <a href="${prefix}about.html">About</a> &nbsp;·&nbsp;
+      <a href="https://www.pinterest.com/TheAndyGifts/" target="_blank" rel="noopener">Pinterest</a><br>
+      As an Amazon Associate, I earn from qualifying purchases.
+    </div>
+  `;
+})();
+
+// --- Sidebar logic ---
 (function() {
   const toggle = document.getElementById('sidebarToggle');
   const sidebar = document.getElementById('sidebar');

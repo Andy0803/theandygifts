@@ -130,3 +130,26 @@ nav {
   text-align: left;
 }
 .sidebar-direct:hover { color: var(--accent); }
+
+/* ═══════════════ FOOTER (shared) ═══════════════ */
+footer.site-footer {
+  position: relative; z-index: 2;
+  background: var(--ink); padding: 80px 44px 56px;
+  text-align: center;
+}
+.footer-mark {
+  font-family: var(--display);
+  font-size: 2rem; color: var(--cream);
+  font-style: italic; margin-bottom: 28px;
+}
+.footer-rule {
+  font-size: 0.68rem; letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(245,241,232,0.4); line-height: 2;
+}
+.footer-rule a {
+  color: rgba(245,241,232,0.8);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.footer-rule a:hover { color: var(--cream); }

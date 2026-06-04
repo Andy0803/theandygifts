@@ -60,7 +60,6 @@ body::after { content: ''; position: fixed; inset: 0; background-image: url("dat
 .cta-secondary { display: inline-flex; align-items: center; gap: 10px; font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink); border: 1px solid var(--rule); padding: 18px 34px; text-decoration: none; font-weight: 600; transition: border-color 0.3s, color 0.3s; }
 .cta-secondary:hover { border-color: var(--accent); color: var(--accent); }
 
-footer { position: relative; z-index: 2; background: var(--ink); padding: 64px 44px; text-align: center; font-size: 0.68rem; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(245,241,232,0.4); line-height: 2; }
 footer a { color: rgba(245,241,232,0.8); text-decoration: none; }
 
 @media (max-width: 720px) {.about { padding: 120px 22px 80px; }
@@ -173,13 +172,7 @@ footer a { color: rgba(245,241,232,0.8); text-decoration: none; }
   </div>
 </div>
 
-<footer>
-  © 2026 The Andy Gifts &nbsp;·&nbsp;
-  <a href="index.html">Home</a> &nbsp;·&nbsp;
-  <a href="shop.html">Shop</a> &nbsp;·&nbsp;
-  <a href="https://www.pinterest.com/TheAndyGifts/" target="_blank" rel="noopener">Pinterest</a><br>
-  As an Amazon Associate, I earn from qualifying purchases.
-</footer>
+<footer class="site-footer" id="siteFooter" data-prefix=""></footer>
 
 <script src="shared.js"></script>
 </body>

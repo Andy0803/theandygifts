@@ -81,30 +81,7 @@ body::after {
 .feed-label { font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--ink-mute); font-weight: 600; margin-bottom: 36px; padding-bottom: 18px; border-bottom: 1px solid var(--rule); }
 
 /* Featured */
-.post-featured { display: grid; grid-template-columns: 1.1fr 1fr; gap: 0; border: 1px solid var(--rule); margin-bottom: 56px; text-decoration: none; color: inherit; background: var(--paper); transition: border-color 0.4s ease, transform 0.4s ease; overflow: hidden; }
-.post-featured:hover { border-color: var(--accent); transform: translateY(-4px); }
-.post-featured:hover .pf-title { color: var(--accent); }
-.post-featured-img { background: var(--ink); min-height: 360px; background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; }
-.img-label { font-family: var(--display); color: var(--cream); font-size: 1.8rem; font-style: italic; opacity: 0.35; letter-spacing: 0.05em; }
-.post-featured-body { padding: 56px 48px; display: flex; flex-direction: column; justify-content: center; }
-.pf-tag { font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 20px; }
-.pf-title { font-family: var(--display); font-size: clamp(1.8rem, 3vw, 2.7rem); font-weight: 400; line-height: 1.08; letter-spacing: -0.02em; margin-bottom: 20px; transition: color 0.35s; }
-.pf-dek { font-size: 1.05rem; font-style: italic; color: var(--ink-soft); line-height: 1.55; margin-bottom: 28px; }
-.pf-link { font-size: 0.74rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink); font-weight: 600; }
-
 /* Grid */
-.posts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 30px; }
-.post-card { display: flex; flex-direction: column; text-decoration: none; color: inherit; border: 1px solid var(--rule); background: var(--paper); transition: border-color 0.4s ease, transform 0.4s ease; }
-.post-card:hover { border-color: var(--accent); transform: translateY(-4px); }
-.post-card:hover .pc-title { color: var(--accent); }
-.post-card-img { background: var(--ink); height: 200px; background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-.post-card-img .img-label { font-size: 1.2rem; }
-.post-card-body { padding: 32px 30px; display: flex; flex-direction: column; flex: 1; }
-.pc-tag { font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-mute); font-weight: 600; margin-bottom: 16px; }
-.pc-title { font-family: var(--display); font-size: 1.45rem; font-weight: 400; line-height: 1.15; letter-spacing: -0.015em; margin-bottom: 14px; transition: color 0.35s; }
-.pc-dek { font-size: 0.96rem; font-style: italic; color: var(--ink-soft); line-height: 1.5; margin-bottom: 22px; flex: 1; }
-.pc-link { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink); font-weight: 600; }
-
 /* BROWSE STRIP */
 .browse-strip { position: relative; z-index: 2; text-align: center; padding: 48px 44px 20px; }
 .browse-strip a { display: inline-flex; align-items: center; gap: 10px; font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--cream); background: var(--ink); padding: 20px 42px; border: 1px solid rgba(245,241,232,0.15); text-decoration: none; font-weight: 600; transition: all .3s ease; }
@@ -120,24 +97,16 @@ body::after {
 .manifesto-author strong { color: var(--ink); font-weight: 700; }
 
 /* FOOTER */
-footer { position: relative; z-index: 2; background: var(--ink); padding: 80px 44px 56px; text-align: center; }
-.footer-mark { font-family: var(--display); font-size: 2rem; color: var(--cream); font-style: italic; margin-bottom: 28px; }
-.footer-rule { font-size: 0.68rem; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(245,241,232,0.4); line-height: 2; }
-.footer-rule a { color: rgba(245,241,232,0.8); text-decoration: none; }
-
 @keyframes rise { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
 
 @media (max-width: 720px) {#hero { padding: 120px 22px 50px; }
   .occasions { padding: 20px 22px 10px; }
   .feed { padding: 40px 22px 50px; }
-  .post-featured { grid-template-columns: 1fr; }
-  .post-featured-img { min-height: 220px; }
-  .post-featured-body { padding: 36px 28px; }
-  .posts-grid { grid-template-columns: 1fr; gap: 20px; }
   #manifesto { padding: 10px 22px 80px; }
 }
 </style>
 <link rel="stylesheet" href="shared.css">
+<link rel="stylesheet" href="cards.css">
 </head>
 <body>
 
@@ -217,16 +186,7 @@ footer { position: relative; z-index: 2; background: var(--ink); padding: 80px 4
   <div class="manifesto-author"><strong>Andy</strong> &nbsp;—&nbsp; Founder</div>
 </section>
 
-<footer>
-  <div class="footer-mark">The Andy <em>Gifts</em></div>
-  <div class="footer-rule">
-    © 2026 The Andy Gifts<br>
-    <a href="shop.html">Shop</a> &nbsp;·&nbsp;
-    <a href="#feed">Reviews</a> &nbsp;·&nbsp;
-    <a href="https://www.pinterest.com/TheAndyGifts/" target="_blank" rel="noopener">Pinterest</a><br>
-    As an Amazon Associate, I earn from qualifying purchases.
-  </div>
-</footer>
+<footer class="site-footer" id="siteFooter" data-prefix=""></footer>
 
 <script>
 function buildFeatured(p) {
