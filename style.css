@@ -50,37 +50,6 @@ body::after {
 }
 
 /* ═══════════════ NAV ═══════════════ */
-nav {
-  position: fixed; top: 0; left: 0; right: 0;
-  height: 72px;
-  z-index: 100;
-  background: rgba(245, 241, 232, 0.92);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--rule);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 44px 0 84px;
-}
-
-.nav-mark {
-  font-size: 1.4rem;
-  font-weight: 500;
-  letter-spacing: -0.01em;
-  cursor: pointer;
-  color: var(--ink);
-}
-.nav-mark i { font-style: italic; font-weight: 400; }
-
-.nav-meta {
-  font-size: 0.72rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--ink-mute);
-  font-weight: 500;
-}
-
 /* ═══════════════ HERO ═══════════════ */
 #home-page { position: relative; z-index: 2; }
 
@@ -633,10 +602,6 @@ nav {
 
 /* ═══════════════ MOBILE ═══════════════ */
 @media (max-width: 720px) {
-  nav { padding: 0 22px 0 84px; height: 64px; }
-  .nav-meta { display: none; }
-  .nav-mark { font-size: 1.2rem; }
-
   #hero { padding: 130px 22px 80px; }
   .hero-trust { gap: 32px; margin-top: 48px; }
   .trust-num { font-size: 1.9rem; }

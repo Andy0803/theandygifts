@@ -63,18 +63,6 @@ body::after {
 }
 
 /* NAV */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; height: 72px; z-index: 100;
-  background: rgba(245,241,232,0.92); backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--rule);
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 44px 0 84px;
-}
-.nav-mark { font-size: 1.4rem; font-weight: 500; letter-spacing: -0.01em; color: var(--ink); text-decoration: none; }
-.nav-mark i { font-style: italic; font-weight: 400; }
-.nav-links { display: flex; gap: 30px; align-items: center; }
-.nav-links a { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-mute); font-weight: 600; text-decoration: none; transition: color 0.3s; }
-.nav-links a:hover { color: var(--accent); }
 
 /* HERO */
 #hero { position: relative; z-index: 2; max-width: 1100px; margin: 0 auto; padding: 150px 44px 70px; text-align: center; }
@@ -139,11 +127,7 @@ footer { position: relative; z-index: 2; background: var(--ink); padding: 80px 4
 
 @keyframes rise { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
 
-@media (max-width: 720px) {
-  nav { padding: 0 22px 0 84px; height: 64px; }
-  .nav-links { gap: 16px; }
-  .nav-links a { font-size: 0.62rem; letter-spacing: 0.1em; }
-  #hero { padding: 120px 22px 50px; }
+@media (max-width: 720px) {#hero { padding: 120px 22px 50px; }
   .occasions { padding: 20px 22px 10px; }
   .feed { padding: 40px 22px 50px; }
   .post-featured { grid-template-columns: 1fr; }
@@ -153,7 +137,7 @@ footer { position: relative; z-index: 2; background: var(--ink); padding: 80px 4
   #manifesto { padding: 10px 22px 80px; }
 }
 </style>
-<link rel="stylesheet" href="sidebar.css">
+<link rel="stylesheet" href="shared.css">
 </head>
 <body>
 
@@ -287,7 +271,7 @@ fetch('posts.json')
   });
 </script>
 
-<script src="sidebar.js"></script>
+<script src="shared.js"></script>
 
 </body>
 </html>
