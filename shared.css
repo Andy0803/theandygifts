@@ -41,23 +41,26 @@ nav {
   display: flex; align-items: center; justify-content: center;
   cursor: pointer; background: none; border: none; padding: 0;
 }
-.sidebar-toggle .bars {
-  display: flex; flex-direction: column; gap: 5px;
-  width: 22px;
+.sidebar-toggle svg {
+  width: 26px; height: 22px;
+  transition: transform 0.35s ease;
 }
-.sidebar-toggle .bars span {
-  display: block;
-  width: 22px;
-  height: 2px;
-  background: var(--ink);
-  border-radius: 0;
-  transform: translateZ(0);
-  backface-visibility: hidden;
+.sidebar-toggle svg line {
+  stroke: var(--ink);
+  stroke-width: 2;
+  stroke-linecap: square;
   transition: transform 0.35s ease, opacity 0.35s ease;
+  transform-origin: center;
 }
-.sidebar-toggle.open .bars span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.sidebar-toggle.open .bars span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-.sidebar-toggle.open .bars span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.sidebar-toggle.open svg line:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.sidebar-toggle.open svg line:nth-child(2) {
+  opacity: 0;
+}
+.sidebar-toggle.open svg line:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
 
 .sidebar-overlay {
   position: fixed; inset: 0; z-index: 149;
