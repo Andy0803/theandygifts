@@ -61,7 +61,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 44px;
+  padding: 0 44px 0 84px;
 }
 
 .nav-mark {
@@ -633,7 +633,7 @@ nav {
 
 /* ═══════════════ MOBILE ═══════════════ */
 @media (max-width: 720px) {
-  nav { padding: 0 22px; height: 64px; }
+  nav { padding: 0 22px 0 84px; height: 64px; }
   .nav-meta { display: none; }
   .nav-mark { font-size: 1.2rem; }
 
