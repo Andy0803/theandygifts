@@ -90,89 +90,15 @@ body::after {
 }
 
 /* Featured (first) post — large */
-.post-featured {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 0;
-  border: 1px solid var(--rule); margin-bottom: 64px;
-  text-decoration: none; color: inherit; background: var(--paper);
-  transition: border-color 0.4s ease, transform 0.4s ease;
-}
-.post-featured:hover { border-color: var(--accent); transform: translateY(-4px); }
-.post-featured:hover .pf-title { color: var(--accent); }
-.post-featured-img {
-  background: var(--ink); min-height: 340px;
-  display: flex; align-items: center; justify-content: center;
-  position: relative; overflow: hidden;
-}
-.post-featured-img span {
-  font-family: var(--display); color: var(--cream); font-size: 2rem;
-  font-style: italic; opacity: 0.4; letter-spacing: 0.05em;
-}
-.post-featured-body { padding: 56px 48px; display: flex; flex-direction: column; justify-content: center; }
-.pf-tag {
-  font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase;
-  color: var(--accent); font-weight: 600; margin-bottom: 20px;
-}
-.pf-title {
-  font-family: var(--display); font-size: clamp(1.8rem, 3vw, 2.6rem);
-  font-weight: 400; line-height: 1.1; letter-spacing: -0.02em;
-  margin-bottom: 20px; transition: color 0.35s;
-}
-.pf-dek { font-size: 1.05rem; font-style: italic; color: var(--ink-soft); line-height: 1.55; margin-bottom: 28px; }
-.pf-link {
-  font-size: 0.74rem; letter-spacing: 0.22em; text-transform: uppercase;
-  color: var(--ink); font-weight: 600;
-}
-
 /* Grid of remaining posts */
-.posts-grid {
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 32px;
-}
-.post-card {
-  display: flex; flex-direction: column; text-decoration: none; color: inherit;
-  border: 1px solid var(--rule); background: var(--paper);
-  transition: border-color 0.4s ease, transform 0.4s ease;
-}
-.post-card:hover { border-color: var(--accent); transform: translateY(-4px); }
-.post-card:hover .pc-title { color: var(--accent); }
-.post-card-img {
-  background: var(--ink); height: 180px;
-  display: flex; align-items: center; justify-content: center;
-}
-.post-card-img span {
-  font-family: var(--display); color: var(--cream); font-size: 1.3rem;
-  font-style: italic; opacity: 0.4;
-}
-.post-card-body { padding: 32px 30px; display: flex; flex-direction: column; flex: 1; }
-.pc-tag {
-  font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase;
-  color: var(--ink-mute); font-weight: 600; margin-bottom: 16px;
-}
-.pc-title {
-  font-family: var(--display); font-size: 1.45rem; font-weight: 400;
-  line-height: 1.15; letter-spacing: -0.015em; margin-bottom: 14px; transition: color 0.35s;
-}
-.pc-dek { font-size: 0.96rem; font-style: italic; color: var(--ink-soft); line-height: 1.5; margin-bottom: 22px; flex: 1; }
-.pc-link {
-  font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--ink); font-weight: 600;
-}
-
-footer {
-  position: relative; z-index: 2; background: var(--ink); padding: 64px 44px;
-  text-align: center; font-size: 0.68rem; letter-spacing: 0.25em;
-  text-transform: uppercase; color: rgba(245,241,232,0.5);
-}
 footer a { color: rgba(245,241,232,0.8); }
 
 @media (max-width: 720px) {.blog-header { padding: 120px 22px 40px; }
   .blog-feed { padding: 30px 22px 80px; }
-  .post-featured { grid-template-columns: 1fr; }
-  .post-featured-img { min-height: 200px; }
-  .post-featured-body { padding: 36px 28px; }
-  .posts-grid { grid-template-columns: 1fr; gap: 20px; }
-}
+  }
 </style>
 <link rel="stylesheet" href="../shared.css">
+<link rel="stylesheet" href="../cards.css">
 </head>
 <body>
 
@@ -261,9 +187,7 @@ footer a { color: rgba(245,241,232,0.8); }
 
 </main>
 
-<footer>
-  © 2026 The Andy Gifts &nbsp;·&nbsp; <a href="../shop.html">Shop</a> &nbsp;·&nbsp; <a href="../about.html">About</a> &nbsp;·&nbsp; <a href="https://www.pinterest.com/TheAndyGifts/" target="_blank" rel="noopener">Pinterest</a>
-</footer>
+<footer class="site-footer" id="siteFooter" data-prefix="../"></footer>
 
 <script src="../shared.js"></script>
 </body>
