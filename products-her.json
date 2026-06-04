@@ -9,15 +9,18 @@
       "products": [
         {
           "name": "NutriBullet Pro 900W Blender",
+          "why": "She's been meaning to make smoothies for two years. This is the one that actually makes her start.",
+          "price": "~$70",
+          "editorsPick": true,
           "link": "https://amzn.to/4tWX7kz",
-          "image": "images/nutribullet-pro-900w.png",
-          "why": "She's been meaning to make smoothies for two years. This is the one that actually makes her start."
+          "image": "images/nutribullet-pro-900w.png"
         },
         {
           "name": "ROYAL CRAFT WOOD Bamboo Cutting Board Set",
+          "why": "The kind of board that makes chopping strawberries feel like Sunday, not Monday.",
+          "price": "~$35",
           "link": "https://amzn.to/4wO4ywV",
-          "image": "images/royal-craft-bamboo-cutting-board.png",
-          "why": "The kind of board that makes chopping strawberries feel like Sunday, not Monday."
+          "image": "images/royal-craft-bamboo-cutting-board.png"
         }
       ]
     }

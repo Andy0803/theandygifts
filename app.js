@@ -87,16 +87,30 @@ function showCategory(id) {
   document.getElementById('page-dek').textContent = cat.blurb;
   document.getElementById('page-aside').textContent = cat.aside;
 
+  const pick = cat.products.find(p => p.editorsPick);
+  const quickPickHtml = pick ? `
+    <div class="quick-pick">
+      <span class="quick-pick-label">If choosing just one —</span>
+      <a class="quick-pick-name" href="${escapeAttr(pick.link)}" target="_blank" rel="noopener"
+         onclick="trackAffiliateClick('${escapeAttr(cat.label)}', '${escapeAttr(pick.name)}')">
+        ${escapeHtml(pick.name)} →
+      </a>
+    </div>` : '';
+
   const list = document.getElementById('products-list');
-  list.innerHTML = cat.products.map((p, i) => {
+  list.innerHTML = quickPickHtml + cat.products.map((p, i) => {
     const imageHtml = p.image
       ? `<img class="prod-image" src="${escapeAttr(p.image)}" alt="${escapeAttr(p.name)}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\\'prod-image-placeholder\\'>No image</div>'">`
       : `<div class="prod-image-placeholder">No image</div>`;
     const whyHtml = p.why
       ? `<div class="prod-why">${escapeHtml(p.why)}</div>`
       : '';
+    const priceHtml = p.price
+      ? `<div class="prod-price">${escapeHtml(p.price)}</div>`
+      : '';
+    const epBadge = p.editorsPick ? `<span class="ep-badge">Pick</span>` : '';
     return `
-    <a class="product-row fade-in"
+    <a class="product-row${p.editorsPick ? ' is-editors-pick' : ''} fade-in"
        href="${escapeAttr(p.link)}"
        target="_blank"
        rel="noopener"
@@ -106,8 +120,10 @@ function showCategory(id) {
       <div class="prod-text">
         <div class="prod-name">${escapeHtml(p.name)}</div>
         ${whyHtml}
+        ${priceHtml}
       </div>
       <span class="prod-cta">
+        ${epBadge}
         See on Amazon
         <svg width="13" height="13" viewBox="0 0 11 11" fill="none">
           <path d="M2 9L9 2M9 2H3M9 2V8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>

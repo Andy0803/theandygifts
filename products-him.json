@@ -5,107 +5,125 @@
       "label": "LEGO",
       "title": "The Builders",
       "blurb": "LEGO sets for the man who deserves a slow weekend.",
-      "aside": "I've watched a grown man disappear into a thousand-piece set on a Sunday afternoon and come out calmer than any meditation app has ever made me. There's a reason these aren't toys.",
+      "aside": "I've watched a grown man disappear into a thousand-piece set on a Sunday afternoon and come out calmer than any meditation app has ever made me. The build takes six to eight hours. He'll lose a Saturday and not mind — and the finished model stays on his shelf, because he made it.",
       "products": [
         {
           "name": "LEGO Pirates of the Caribbean — Black Pearl",
           "why": "He watched this movie as a kid. He'll build it as a man.",
+          "price": "~$270",
           "link": "https://amzn.to/4dzicfU",
           "image": "images/lego-black-pearl.png"
         },
         {
           "name": "LEGO Architecture — Statue of Liberty",
           "why": "For the guy who has a place he still wants to go.",
+          "price": "~$120",
           "link": "https://amzn.to/4deYzID",
           "image": "images/lego-liberty.png"
         },
         {
           "name": "LEGO Nintendo Game Boy",
           "why": "Every guy remembers his first game. This is that memory, built.",
+          "price": "~$90",
           "link": "https://amzn.to/4diNTsC",
           "image": "images/lego-gameboy.png"
         },
         {
           "name": "LEGO Architecture — Paris Skyline",
           "why": "He'll put it on his shelf and think of the trip he wants to take with you.",
+          "price": "~$60",
           "link": "https://amzn.to/4uxK3Ts",
           "image": "images/lego-paris.png"
         },
         {
           "name": "LEGO Architecture — Himeji Castle",
           "why": "Quiet, precise, and a little obsessive. Just like him.",
+          "price": "~$60",
           "link": "https://amzn.to/4u6FZtA",
           "image": "images/lego-himeji.png"
         },
         {
           "name": "LEGO Architecture — Taj Mahal",
           "why": "2,000 pieces. He won't rush it. That's the whole point.",
+          "price": "~$170",
           "link": "https://amzn.to/3R173M6",
           "image": "images/lego-taj-mahal.png"
         },
         {
           "name": "LEGO Icons — Ford Model T",
           "why": "For the man who appreciates things that were built to last.",
+          "price": "~$60",
           "link": "https://amzn.to/48NfwbW",
           "image": "images/lego-ford-t.png"
         },
         {
           "name": "LEGO Botanical — Rose Bouquet",
           "why": "Flowers that will never wilt, from someone who never forgets.",
+          "price": "~$50",
           "link": "https://amzn.to/434cUmo",
           "image": "images/lego-roses.png"
         },
         {
           "name": "LEGO Botanical — Japanese Maple Bonsai",
           "why": "Desk decor he'll actually keep. For years.",
+          "price": "~$50",
           "link": "https://amzn.to/4nm6A3e",
           "image": "images/lego-bonsai.png"
         },
         {
           "name": "LEGO Icons — Polaroid OneStep Camera",
           "why": "He'll build it in an afternoon and display it like a trophy.",
+          "price": "~$100",
           "link": "https://amzn.to/3P9HDvi",
           "image": "images/lego-polaroid.png"
         },
         {
           "name": "LEGO Botanical — Cactus",
           "why": "Low maintenance. High character. Exactly his kind of plant.",
+          "price": "~$40",
           "link": "https://amzn.to/3OVi8hf",
           "image": "images/lego-cactus.png"
         },
         {
           "name": "LEGO Botanical — Peace Lily",
           "why": "Something calm for his corner. He'll notice it every morning.",
+          "price": "~$50",
           "link": "https://amzn.to/4ux78W8",
           "image": "images/lego-peace-lily.png"
         },
         {
           "name": "LEGO Icons — Land Rover Defender",
           "why": "For the man who plans drives he hasn't taken yet.",
+          "price": "~$200",
           "link": "https://amzn.to/48OBbjV",
           "image": "images/lego-defender.png"
         },
         {
           "name": "LEGO Icons — Porsche 911",
           "why": "He'll lose a Saturday to this and not check his phone once.",
+          "price": "~$170",
+          "editorsPick": true,
           "link": "https://amzn.to/4dm8Enb",
           "image": "images/lego-porsche.png"
         },
         {
           "name": "LEGO Architecture — Trafalgar Square",
           "why": "A city he admires. A build he'll be proud of.",
+          "price": "~$60",
           "link": "https://amzn.to/4u3aRer",
           "image": "images/lego-trafalgar.png"
         },
         {
           "name": "LEGO Technic — Volvo Wheel Loader",
           "why": "For the engineer in him. Every gear actually works.",
+          "price": "~$230",
           "link": "https://amzn.to/4dEXvyb",
           "image": "images/lego-volvo.png"
         },
         {
           "name": "LEGO Icons — Chevrolet Corvette",
           "why": "The car he talks about. Finally something to show for it.",
+          "price": "~$100",
           "link": "https://amzn.to/430bSb9",
           "image": "images/lego-corvette.png"
         }
@@ -121,42 +139,50 @@
         {
           "name": "Zombie Riding Chicken Jockey Plush",
           "why": "He'll laugh out loud. Then keep it on his desk forever.",
+          "price": "~$25",
           "link": "https://amzn.to/3Pc3an6",
           "image": "images/mc-zombie-chicken.png"
         },
         {
           "name": "Wolf Companion Plush",
           "why": "He tamed one at age eleven. He never forgot it.",
+          "price": "~$20",
           "link": "https://amzn.to/4ts6SGY",
           "image": "images/mc-wolf-plush.png"
         },
         {
           "name": "8-Piece Mob Plush Collection",
           "why": "Every character he remembers. All in one box.",
+          "price": "~$60",
           "link": "https://amzn.to/4uEZQjf",
           "image": "images/mc-mob-set.png"
         },
         {
           "name": "Bee Plush",
           "why": "Small. Soft. Completely disarms him. That's the gift.",
+          "price": "~$15",
           "link": "https://amzn.to/4dk71Gy",
           "image": "images/mc-bee.png"
         },
         {
           "name": "Wolf LED Mood Lamp",
           "why": "His room, but with the one thing it was missing.",
+          "price": "~$30",
           "link": "https://amzn.to/4u57CD8",
           "image": "images/mc-wolf-lamp.png"
         },
         {
           "name": "Fox LED Mood Lamp",
           "why": "Warm light. Quiet corner. Exactly the vibe he's going for.",
+          "price": "~$30",
           "link": "https://amzn.to/4derMU1",
           "image": "images/mc-fox-lamp.png"
         },
         {
           "name": "Axolotl Plush",
           "why": "The most loved creature in the game. Watch his face when he opens this.",
+          "price": "~$25",
+          "editorsPick": true,
           "link": "https://amzn.to/4dk8Bbo",
           "image": "images/mc-axolotl.png"
         }
@@ -172,43 +198,51 @@
         {
           "name": "Royal Reserve Whiskey Stones Set",
           "why": "His Friday nights, upgraded. No melt. No compromise.",
+          "price": "~$25",
           "link": "https://amzn.to/43pjVhP",
           "image": "images/whiskey-stones.png"
         },
         {
           "name": "Bellroy Hide & Seek Leather Wallet",
           "why": "He's had the same wallet for years. He won't replace it himself.",
+          "price": "~$89",
+          "editorsPick": true,
           "link": "https://amzn.to/4uVNL9y",
           "image": "images/bellroy-wallet.png"
         },
         {
           "name": "Victrola Highland 4-in-1 Bluetooth Record Player",
           "why": "He'll play it every night. And think of you every time.",
+          "price": "~$100",
           "link": "https://amzn.to/4wHeCrD",
           "image": "images/victrola-highland.png"
         },
         {
           "name": "Magcubic HY300 Pro Mini Projector",
           "why": "Movie nights that actually feel like movie nights.",
+          "price": "~$90",
           "link": "https://amzn.to/3RmTPJJ",
           "image": "images/magcubic-projector.png"
         },
         {
           "name": "Hydro Flask 32oz — Wide Mouth",
           "why": "Cold for 24 hours. He'll reach for it every single morning.",
+          "price": "~$45",
           "link": "https://amzn.to/4dBCUuk",
           "image": "images/hydro-flask.png"
         },
         {
           "name": "Whiskey Decanter Globe Set",
-          "link": "https://amzn.to/4nUpuOJ",
           "why": "He'll pour the same whiskey but it'll taste better. He won't know why. It's the glass.",
+          "price": "~$40",
+          "link": "https://amzn.to/4nUpuOJ",
           "image": "images/whiskey-decanter-globe-set.png"
         },
         {
           "name": "YETI Rambler 20oz Tumbler",
-          "link": "https://amzn.to/3PKG9I8",
           "why": "He's been using a gas station travel mug for three years. This is the upgrade he'd never buy himself.",
+          "price": "~$35",
+          "link": "https://amzn.to/3PKG9I8",
           "image": "images/yeti-rambler-20oz-black.png"
         }
       ]
