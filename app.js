@@ -113,11 +113,7 @@ function showCategory(id) {
       : '';
     const epBadge = p.editorsPick ? `<span class="ep-badge">Pick</span>` : '';
     return `
-    <a class="product-row${p.editorsPick ? ' is-editors-pick' : ''} fade-in"
-       href="${escapeAttr(p.link)}"
-       target="_blank"
-       rel="noopener"
-       onclick="trackAffiliateClick('${escapeAttr(cat.label)}', '${escapeAttr(p.name)}')"
+    <div class="product-row${p.editorsPick ? ' is-editors-pick' : ''} fade-in"
        style="animation-delay:${i * 0.04}s">
       <div class="prod-image-wrap">${imageHtml}</div>
       <div class="prod-text">
@@ -126,14 +122,18 @@ function showCategory(id) {
         ${priceHtml}
         ${reviewHtml}
       </div>
-      <span class="prod-cta">
+      <a class="prod-cta"
+         href="${escapeAttr(p.link)}"
+         target="_blank"
+         rel="noopener"
+         onclick="trackAffiliateClick('${escapeAttr(cat.label)}', '${escapeAttr(p.name)}')">
         ${epBadge}
         See on Amazon
         <svg width="13" height="13" viewBox="0 0 11 11" fill="none">
           <path d="M2 9L9 2M9 2H3M9 2V8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
         </svg>
-      </span>
-    </a>`;
+      </a>
+    </div>`;
   }).join('');
 
   const others = CATEGORIES.filter(c => c.id !== id);
