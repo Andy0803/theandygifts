@@ -449,7 +449,7 @@ body::after {
   position: relative;
 }
 
-.product-row:first-child { border-top: 1px solid var(--rule); }
+.products-list { border-top: 1px solid var(--rule); }
 
 .product-row:hover {
   padding-left: 20px;
@@ -686,7 +686,7 @@ body::after {
     align-items: start;
   }
   .product-row:hover { padding-left: 0; }
-  .is-editors-pick { padding-left: 13px; }
+  .is-editors-pick { border-left: none; padding-left: 0; }
   .prod-image-wrap {
     width: 88px; height: 88px;
     grid-row: 1 / 2;
