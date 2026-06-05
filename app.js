@@ -97,8 +97,10 @@ function showCategory(id) {
       </a>
     </div>` : '';
 
+  document.getElementById('quick-pick-slot').innerHTML = quickPickHtml;
+
   const list = document.getElementById('products-list');
-  list.innerHTML = quickPickHtml + cat.products.map((p, i) => {
+  list.innerHTML = cat.products.map((p, i) => {
     const imageHtml = p.image
       ? `<img class="prod-image" src="${escapeAttr(p.image)}" alt="${escapeAttr(p.name)}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\\'prod-image-placeholder\\'>No image</div>'">`
       : `<div class="prod-image-placeholder">No image</div>`;
