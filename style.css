@@ -539,6 +539,14 @@ body::after {
 }
 .prod-cta svg { transition: transform 0.3s; }
 
+/* Inline review link on product rows */
+.prod-review-link {
+  display: inline-block; font-size: 0.76rem; font-weight: 600;
+  letter-spacing: 0.08em; color: var(--accent); text-decoration: none;
+  margin-top: 4px; transition: opacity 0.25s;
+}
+.prod-review-link:hover { opacity: 0.7; }
+
 /* Editor's Pick quick-pick banner */
 .quick-pick {
   display: flex; align-items: center; gap: 16px; flex-wrap: wrap;

@@ -108,6 +108,9 @@ function showCategory(id) {
     const priceHtml = p.price
       ? `<div class="prod-price">${escapeHtml(p.price)}</div>`
       : '';
+    const reviewHtml = p.review
+      ? `<a class="prod-review-link" href="${escapeAttr(p.review)}">Read our review →</a>`
+      : '';
     const epBadge = p.editorsPick ? `<span class="ep-badge">Pick</span>` : '';
     return `
     <a class="product-row${p.editorsPick ? ' is-editors-pick' : ''} fade-in"
@@ -121,6 +124,7 @@ function showCategory(id) {
         <div class="prod-name">${escapeHtml(p.name)}</div>
         ${whyHtml}
         ${priceHtml}
+        ${reviewHtml}
       </div>
       <span class="prod-cta">
         ${epBadge}
