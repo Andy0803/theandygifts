@@ -445,6 +445,7 @@ body::after {
   transition: padding 0.4s ease, background 0.4s ease;
   text-decoration: none;
   color: inherit;
+  cursor: pointer;
   position: relative;
 }
 
@@ -569,8 +570,8 @@ body::after {
   color: var(--ink-soft); margin-top: 2px;
 }
 
-/* Editor's Pick row highlight */
-.is-editors-pick { background: var(--paper); }
+/* Editor's Pick row — no background change, just subtle left border */
+.is-editors-pick { border-left: 3px solid var(--accent); padding-left: 16px; }
 
 /* Editor's Pick badge inside CTA button */
 .ep-badge {
@@ -679,21 +680,32 @@ body::after {
   /* ★ MOBILE 優化：圖縮小，CTA 更靠近文字 */
   .product-row {
     grid-template-columns: 88px 1fr;
+    grid-template-rows: auto auto;
     gap: 14px;
     padding: 20px 0;
     align-items: start;
   }
   .product-row:hover { padding-left: 0; }
-  .prod-image-wrap { width: 88px; height: 88px; }
-  .prod-name { font-size: 1.05rem; }
-  .prod-why { font-size: 0.82rem; }
+  .is-editors-pick { padding-left: 13px; }
+  .prod-image-wrap {
+    width: 88px; height: 88px;
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+  }
+  .prod-text {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+  }
   .prod-cta {
-    grid-column: 2 / -1;
+    grid-row: 2 / 3;
+    grid-column: 1 / -1;
     justify-self: start;
-    margin-top: 4px;
+    margin-top: 0;
     padding: 9px 16px;
     font-size: 0.62rem;
   }
+  .prod-name { font-size: 1.05rem; }
+  .prod-why { font-size: 0.82rem; }
 
   .keep-going { margin-top: 80px; }
   .keep-going-links { gap: 24px; }
