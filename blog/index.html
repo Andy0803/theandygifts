@@ -129,6 +129,13 @@ footer a { color: rgba(245,241,232,0.8); }
 <script>
 const PREFIX = '../';
 
+function buildMeta(p, cls) {
+  if (!p.rating && !p.price) return '';
+  const stars = p.rating ? `<span class="${cls}-rating">★ ${Number(p.rating).toFixed(1)}</span>` : '';
+  const price = p.price ? `<span class="${cls}-price">${p.price}</span>` : '';
+  return `<div class="${cls}-meta">${stars}${price}</div>`;
+}
+
 function buildFeatured(p) {
   const imgStyle = p.cover ? `style="background-image:url('${PREFIX}${p.cover}')"` : '';
   return `
@@ -137,6 +144,7 @@ function buildFeatured(p) {
       <div class="post-featured-body">
         <div class="pf-tag">Editor's Pick · ${p.tag}</div>
         <h2 class="pf-title">${p.title}</h2>
+        ${buildMeta(p, 'pf')}
         <p class="pf-dek">${p.dek}</p>
         <span class="pf-link">Read the full review →</span>
       </div>
@@ -151,6 +159,7 @@ function buildCard(p) {
       <div class="post-card-body">
         <div class="pc-tag">${p.tag}</div>
         <h3 class="pc-title">${p.title}</h3>
+        ${buildMeta(p, 'pc')}
         <p class="pc-dek">${p.dek}</p>
         <span class="pc-link">Read the review →</span>
       </div>

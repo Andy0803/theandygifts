@@ -18,7 +18,8 @@
      We skip .fade-in elements (app.js animates those itself). */
   var REVEAL = [
     '.hero-eyebrow', '.hero-deck', '.hero-trust', '.occasions',
-    '.feed-label', '.post-featured', '.post-card',
+    '.feed-label', '.post-featured', '.post-card', '.gf-card',
+    '.gf-head', '.gf-controls',
     '.manifesto-eyebrow', '.manifesto-quote', '.manifesto-author',
     '.guides-eyebrow', '.guides-title', '.guide-card',
     '.browse-strip', '.keep-going',
@@ -44,7 +45,7 @@
   ].join(',');
 
   /* Cards that tilt in 3D. */
-  var TILT = '.post-card, .guide-card, .trust-card, .post-featured';
+  var TILT = '.post-card, .guide-card, .trust-card, .post-featured, .gf-card';
 
   /* ── Helpers ──────────────────────────────────────────────── */
   function each(root, sel, fn) {
@@ -139,6 +140,7 @@
     });
     // stagger siblings that share a grid/flow
     stagger(root, '.posts-grid', '.post-card');
+    stagger(root, '.gf-results', '.gf-card');
     stagger(root, '.guides-list', '.guide-card');
     stagger(root, '.trust-grid', '.trust-card');
     stagger(root, '.hero-trust', '.trust-item');

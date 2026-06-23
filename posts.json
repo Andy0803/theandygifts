@@ -5,6 +5,8 @@
     "dek": "Heavy amber glass, a handmade ceramic tray, 16 labels — and the one trick that keeps the pump from clogging. Here's the honest verdict.",
     "url": "blog/maisonovo-kitchen-soap-dispenser-review.html",
     "cover": "blog/cover/maisonovo-kitchen-soap-dispenser.png",
+    "rating": 4.6,
+    "price": "~$25",
     "featured": false
   },
   {
@@ -13,6 +15,8 @@
     "dek": "No drill, no damage, no more bottles on the floor. What 4,274 owners actually say about this wall-mounted set.",
     "url": "blog/maisonovo-dispenser-review.html",
     "cover": "blog/cover/maisonovo-dispenser.png",
+    "rating": 4.3,
+    "price": "~$35",
     "featured": false
   },
   {
@@ -21,6 +25,8 @@
     "dek": "Hundreds of owner reviews, one honest verdict — and the hidden compartment most buyers miss.",
     "url": "blog/bellroy-hide-seek-wallet-review.html",
     "cover": "blog/cover/bellroy-wallet.png",
+    "rating": 4.5,
+    "price": "~$89",
     "featured": false
   },
   {
@@ -29,6 +35,8 @@
     "dek": "He's been reheating the same coffee every morning. We tested whether this $35 cup actually fixes that.",
     "url": "blog/yeti-rambler-20oz-review.html",
     "cover": "blog/cover/yeti-rambler.png",
+    "rating": 4.6,
+    "price": "~$35",
     "featured": false
   },
   {
@@ -37,6 +45,8 @@
     "dek": "1,458 pieces of German engineering in Danish plastic. We dug through the expert tests and owner reports to find the one flaw worth knowing.",
     "url": "blog/lego-porsche-911-review.html",
     "cover": "blog/cover/lego-porsche.png",
+    "rating": 4.5,
+    "price": "~$170",
     "featured": false
   },
   {
@@ -45,6 +55,8 @@
     "dek": "Charred wood, a vintage birth year, stones and an ice mold — all in a tube. The 40th birthday gift that earns a permanent spot on his shelf.",
     "url": "blog/tomzio-whiskey-glass-review.html",
     "cover": "blog/cover/tomzio-whiskey-glass.png",
+    "rating": 4.5,
+    "price": "~$24",
     "featured": true
   },
   {
@@ -53,6 +65,8 @@
     "dek": "Beautiful to look at, effortless to set up. But is it actually worth the price — or is a turntable this convenient too convenient to sound good?",
     "url": "blog/victrola-highland-review.html",
     "cover": "blog/cover/victrola-highland.png",
+    "rating": 4.0,
+    "price": "~$100",
     "featured": false
   }
 ]
