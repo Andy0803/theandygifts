@@ -1,0 +1,269 @@
+/* ═══════════════════════════════════════════════════════════════
+   MOTION SYSTEM — cinematic motion layer for The Andy Gifts
+   Brand DNA preserved (cream paper + serif). Enhances all pages.
+   Loaded after the page's own CSS so it can layer on top.
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  --m-ease: cubic-bezier(0.22, 1, 0.36, 1);          /* expo-out, cinematic */
+  --m-ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
+  --accent-2: #b9612f;                                /* warmer accent for glow */
+}
+
+/* Hide content before reveal ONLY when JS has booted (progressive
+   enhancement — no JS means everything stays visible). */
+html.m-ready [data-m-reveal] {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+html.m-ready [data-m-reveal="up"]    { transform: translateY(42px); }
+html.m-ready [data-m-reveal="down"]  { transform: translateY(-42px); }
+html.m-ready [data-m-reveal="left"]  { transform: translateX(48px); }
+html.m-ready [data-m-reveal="right"] { transform: translateX(-48px); }
+html.m-ready [data-m-reveal="scale"] { transform: scale(0.92); }
+html.m-ready [data-m-reveal="blur"]  { transform: translateY(30px); filter: blur(10px); }
+
+[data-m-reveal] {
+  transition:
+    opacity 0.9s var(--m-ease),
+    transform 0.95s var(--m-ease),
+    filter 0.9s var(--m-ease);
+  transition-delay: var(--m-delay, 0s);
+}
+/* Higher specificity than the per-variant hidden rules above so the
+   revealed state always wins (html.m-ready […variant] beats […].m-in). */
+html.m-ready [data-m-reveal].m-in {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+/* ── Split-text headline reveal ───────────────────────────────── */
+.m-split { }
+.m-word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  /* a touch of breathing room so descenders/italics aren't clipped */
+  padding-bottom: 0.12em;
+  margin-bottom: -0.12em;
+}
+.m-word-i {
+  display: inline-block;
+  transform: translateY(115%) rotate(6deg);
+  opacity: 0;
+  transition:
+    transform 0.9s var(--m-ease),
+    opacity 0.9s var(--m-ease);
+  transition-delay: calc(var(--wi, 0) * 0.05s + var(--m-delay, 0s));
+}
+.m-split.m-in .m-word-i {
+  transform: translateY(0) rotate(0);
+  opacity: 1;
+}
+
+/* ── Scroll progress bar ──────────────────────────────────────── */
+#m-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px; width: 0%;
+  z-index: 300;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  box-shadow: 0 0 12px rgba(139,58,31,0.5);
+  transition: width 0.1s linear;
+  pointer-events: none;
+}
+
+/* ── Marquee / trust ticker ───────────────────────────────────── */
+.m-marquee {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  background: var(--paper);
+  padding: 16px 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.m-marquee-track {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  will-change: transform;
+  animation: m-scroll 34s linear infinite;
+}
+.m-marquee:hover .m-marquee-track { animation-play-state: paused; }
+.m-marquee-item {
+  font-size: 0.78rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--ink-soft);
+  padding: 0 26px;
+  display: inline-flex;
+  align-items: center;
+  gap: 26px;
+}
+.m-marquee-item::after {
+  content: '✦';
+  color: var(--accent);
+  font-size: 0.7rem;
+}
+@keyframes m-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ── Ambient drifting light (warm, paper-friendly) ────────────── */
+#m-ambient {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.m-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+}
+.m-blob.b1 {
+  width: 46vw; height: 46vw;
+  top: -12vw; left: -8vw;
+  background: radial-gradient(circle at 30% 30%, rgba(139,58,31,0.18), transparent 70%);
+  animation: m-drift1 26s var(--m-ease-soft) infinite alternate;
+}
+.m-blob.b2 {
+  width: 40vw; height: 40vw;
+  bottom: -14vw; right: -10vw;
+  background: radial-gradient(circle at 60% 40%, rgba(185,97,47,0.16), transparent 70%);
+  animation: m-drift2 32s var(--m-ease-soft) infinite alternate;
+}
+.m-blob.b3 {
+  width: 34vw; height: 34vw;
+  top: 40%; left: 55%;
+  background: radial-gradient(circle at 50% 50%, rgba(120,90,60,0.10), transparent 70%);
+  animation: m-drift3 38s var(--m-ease-soft) infinite alternate;
+}
+@keyframes m-drift1 { to { transform: translate(8vw, 10vh) scale(1.15); } }
+@keyframes m-drift2 { to { transform: translate(-10vw, -8vh) scale(1.2); } }
+@keyframes m-drift3 { to { transform: translate(-12vw, 6vh) scale(0.9); } }
+
+/* ── 3D tilt cards ────────────────────────────────────────────── */
+.m-tilt {
+  transform-style: preserve-3d;
+  transition: transform 0.3s var(--m-ease-soft), box-shadow 0.4s var(--m-ease-soft);
+  will-change: transform;
+}
+.m-tilt.m-tilting {
+  transition: box-shadow 0.4s var(--m-ease-soft);
+  box-shadow: 0 30px 60px -28px rgba(26,24,20,0.45);
+}
+/* sheen that follows the cursor across tilted cards */
+.m-tilt { position: relative; }
+.m-tilt .m-sheen {
+  position: absolute; inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  background: radial-gradient(
+    320px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(255,250,240,0.35), transparent 60%);
+  z-index: 3;
+  mix-blend-mode: soft-light;
+}
+.m-tilt.m-tilting .m-sheen { opacity: 1; }
+
+/* ── Magnetic buttons ─────────────────────────────────────────── */
+.m-magnetic {
+  transition: transform 0.25s var(--m-ease-soft);
+  will-change: transform;
+}
+
+/* ── Nav: shrink + deepen on scroll ───────────────────────────── */
+nav {
+  transition:
+    height 0.4s var(--m-ease-soft),
+    background 0.4s var(--m-ease-soft),
+    box-shadow 0.4s var(--m-ease-soft),
+    border-color 0.4s var(--m-ease-soft);
+}
+nav.m-scrolled {
+  height: 60px;
+  background: rgba(245,241,232,0.82);
+  box-shadow: 0 8px 30px -18px rgba(26,24,20,0.5);
+}
+nav.m-scrolled .nav-mark { font-size: 1.22rem; }
+.nav-mark { transition: font-size 0.4s var(--m-ease-soft); }
+
+/* underline sweep on nav links */
+.nav-links a {
+  position: relative;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: -5px;
+  height: 1px; width: 0;
+  background: var(--accent);
+  transition: width 0.35s var(--m-ease);
+}
+.nav-links a:hover::after,
+.nav-links a.active::after { width: 100%; }
+
+/* ── Back-to-top floating button ──────────────────────────────── */
+#m-top {
+  position: fixed;
+  right: 26px; bottom: 26px;
+  width: 50px; height: 50px;
+  z-index: 130;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  color: var(--ink);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  opacity: 0; transform: translateY(20px) scale(0.8);
+  pointer-events: none;
+  transition: opacity 0.4s var(--m-ease), transform 0.4s var(--m-ease),
+              background 0.3s, color 0.3s, border-color 0.3s;
+  box-shadow: 0 10px 30px -14px rgba(26,24,20,0.5);
+}
+#m-top.m-show { opacity: 1; transform: none; pointer-events: auto; }
+#m-top:hover { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+#m-top svg { transition: transform 0.3s var(--m-ease); }
+#m-top:hover svg { transform: translateY(-3px); }
+
+/* ── Richer hover lift on existing cards (layer on top) ───────── */
+.post-card, .guide-card, .post-featured, .trust-card {
+  transition:
+    transform 0.5s var(--m-ease),
+    border-color 0.4s ease,
+    box-shadow 0.5s var(--m-ease) !important;
+}
+.post-card:hover, .guide-card:hover {
+  box-shadow: 0 26px 50px -30px rgba(26,24,20,0.4);
+}
+
+/* count-up numbers shouldn't reflow-jump */
+.trust-num, [data-m-count] { font-variant-numeric: tabular-nums; }
+
+/* ── Reduced motion: respect the user ─────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  html.m-ready [data-m-reveal] { opacity: 1 !important; transform: none !important; filter: none !important; }
+  .m-word-i { transform: none !important; opacity: 1 !important; }
+  .m-marquee-track { animation: none !important; }
+  .m-blob { animation: none !important; }
+  #m-ambient { display: none; }
+  .m-tilt { transform: none !important; }
+}
+
+/* ── Mobile tuning ────────────────────────────────────────────── */
+@media (max-width: 720px) {
+  #m-top { right: 16px; bottom: 16px; width: 44px; height: 44px; }
+  .m-blob { filter: blur(50px); opacity: 0.4; }
+  .m-marquee-item { font-size: 0.68rem; letter-spacing: 0.2em; }
+}

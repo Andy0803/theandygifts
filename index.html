@@ -71,6 +71,13 @@ body::after {
 .hero-headline i { font-style: italic; color: var(--accent); }
 .hero-deck { font-size: clamp(1.1rem, 2vw, 1.45rem); font-style: italic; line-height: 1.5; color: var(--ink-soft); max-width: 600px; margin: 0 auto; opacity: 0; animation: rise 0.9s ease forwards 0.5s; }
 
+/* HERO STATS */
+.hero-stats { display: flex; gap: clamp(28px, 6vw, 72px); justify-content: center; flex-wrap: wrap; margin-top: 56px; }
+.hero-stat { display: flex; flex-direction: column; gap: 8px; }
+.hero-stat-num { font-family: var(--display); font-size: clamp(2.2rem, 4vw, 3.4rem); line-height: 1; color: var(--accent); letter-spacing: -0.02em; }
+.hero-stat-num i { font-style: italic; }
+.hero-stat-label { font-size: 0.66rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-mute); font-weight: 600; }
+
 /* OCCASION CHIPS */
 .occasions { position: relative; z-index: 2; max-width: 1100px; margin: 0 auto; padding: 30px 44px 20px; display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; opacity: 0; animation: rise 0.9s ease forwards 0.65s; }
 .occasion-chip { font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); font-weight: 600; text-decoration: none; padding: 11px 22px; border: 1px solid var(--rule); border-radius: 100px; transition: all 0.3s; background: var(--paper); }
@@ -107,6 +114,7 @@ body::after {
 </style>
 <link rel="stylesheet" href="shared.css">
 <link rel="stylesheet" href="cards.css">
+<link rel="stylesheet" href="motion.css">
 </head>
 <body>
 
@@ -124,7 +132,29 @@ body::after {
   <div class="hero-eyebrow">Independent Product Reviews · By Andy</div>
   <h1 class="hero-headline">The gift, <i>honestly</i><br>reviewed.</h1>
   <p class="hero-deck">Most gifts are forgotten within a week. These reviews exist so yours isn't — hundreds of owner reports and expert tests, distilled into one honest verdict per product.</p>
+
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="hero-stat-num" data-m-count>1200</div>
+      <div class="hero-stat-label">Owner reports read</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num" data-m-count>100</div>
+      <div class="hero-stat-label">Reviews per pick</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num"><i>0</i></div>
+      <div class="hero-stat-label">Paid placements</div>
+    </div>
+  </div>
 </section>
+
+<div class="m-marquee" aria-hidden="true">
+  <div class="m-marquee-track">
+    <span class="m-marquee-item">Independent</span><span class="m-marquee-item">Research-backed</span><span class="m-marquee-item">No paid placements</span><span class="m-marquee-item">Honest cons</span><span class="m-marquee-item">One verdict per product</span>
+    <span class="m-marquee-item">Independent</span><span class="m-marquee-item">Research-backed</span><span class="m-marquee-item">No paid placements</span><span class="m-marquee-item">Honest cons</span><span class="m-marquee-item">One verdict per product</span>
+  </div>
+</div>
 
 <div class="occasions">
   <a class="occasion-chip" href="#feed">Latest Reviews</a>
@@ -194,6 +224,7 @@ fetch('posts.json')
 </script>
 
 <script src="shared.js"></script>
+<script src="motion.js"></script>
 
 </body>
 </html>
