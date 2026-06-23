@@ -102,16 +102,13 @@ nav {
 .sidebar-parent.open svg { transform: rotate(180deg); }
 
 .sidebar-children {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 0.4s ease;
-}
-.sidebar-children > * {
   overflow: hidden;
-  min-height: 0;
+  max-height: 0;
+  transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .sidebar-children.open {
-  grid-template-rows: 1fr;
+  /* upper bound comfortably above the list's real height */
+  max-height: 480px;
 }
 
 .sidebar-link {
